@@ -1,0 +1,180 @@
+{% extends "index.html" %} {% block title %} - Home{% endblock %}
+{% block headcontain %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/homePage/home.css' %}" />
+<link rel="stylesheet" href="{% static 'css/homePage/vectors.css' %}" />
+<link rel="stylesheet" href="{% static 'css/authstyles/sessionexpiry.css' %}" />
+<link rel="stylesheet" href="{% static 'css/coursecardui/card.css' %}" />
+<link rel="stylesheet" href="{% static 'css/practcode-theams/home-vectors-theams.css' %}">
+<link rel="stylesheet" href="{% static 'css/practcode-theams/home-page-cards-theams.css' %}">
+{% endblock %}
+{% block Mainroot %}
+
+
+<div class="sessionExpire" id="sessionstatusdiv">
+  <div class="sessionexpire_container">
+    session expired,redirected to login page within 5 seconds...
+  </div>
+</div>
+<div class="practcode-theamer" >
+
+  <!-- vector1 -->
+  <div class="homePageVector_1 practcode-theamer">
+    <div class="vector-contains practcode-theamer">
+      <div class="vector_image">
+        <img src="{% static 'img/Vectors/home-pageVector1.png' %}" alt="">
+      </div>
+      <div class="vector-text">
+        <h1>The Best Online Courses Of All Time</h1>
+        <div id="vector_textID"></div>
+        <button class="vector_explorebtn">Explore Now</button>
+      </div>
+
+    </div>
+  </div>
+  <br><br>
+  <!-- vector2 -->
+  <div class="homePageVector_2  practcode-theamer" >
+    <div class="what_toExpectDiv">
+      <h1>What to Expect from a <br>Practcode Course</h1>
+      <br><button class="vector_learnNowBtn  practcodebtnclass practcode-theamer">Start Leaning</button>
+    </div><br>
+
+    <div class="vectorImg_description">
+      <div class="vectorImg_descBox1 practcode-theamer">
+        <div class="vector_imageBox">
+          <div class="imageInnerstylebox">
+            <img src="{% static 'img/Vectors/vector2.jpg' %}"
+              alt="Learn from industry experts, gain hands-on experience through interactive projects, and join a thriving learner community.">
+          </div>
+
+        </div>
+      </div>
+      <div class="vectorImg_descBox2 practcode-theamer">
+        <div class="vectorDescription_cards"><div><i class="fa-solid fa-graduation-cap fa-bounce"></i></div><p>Knowledge</p>
+        </div>
+        <div class="vectorDescription_cards"><div><i class="fa-solid fa-atom fa-spin"></i></div><p>Ultimate access</p>
+      </div>
+        <div class="vectorDescription_cards"><div><i class="fa-solid fa-person-snowboarding fa-bounce"></i></div><p>Practical Skills</p>
+        </div>
+        <div class="vectorDescription_cards"><div><i class="fa-solid fa-certificate fa-fade"></i></div><p>A certificate</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <!-- vector3 -->
+  <div class="homePageVector_3 practcode-theamer">
+    <div class="numericvector">
+      <h1>500+</h1>
+      <p>Hours of hands-on learning in our courses</p>
+    </div>
+
+    <div class="numericvector">
+      <h1>1500+</h1>
+      <p>Students Passed Our Compitions</p>
+    </div>
+
+    <div class="numericvector">
+      <h1>2000+</h1>
+      <p>Students learning from practcode</p>
+    </div>
+
+    <div class="numericvector">
+      <h1>25+</h1>
+      <p>The ratio of Theory and Practice in Each Course</p>
+    </div>
+    
+
+  </div>
+  <br><br>
+  <!-- vector 4 Course content -->
+  <div class="homePageVector_4_course">
+    <div class="highest_ratedcourses">
+      <h1>Highest Rated Online Courses <i class="fa-solid fa-code fa-beat-fade"></i></h1>
+      <p>up-to-date content, PractCode is your platform to master programming.</p>
+    </div>
+    <br>
+    <div class="highest_ratedcourses-cards">
+      <div class="cardui ">
+        <div class="card_image_container">
+          <img src="{% static 'img/cardimg/programming.jpg' %}" alt="practcode online courses">
+        </div>
+        <div class="card_content">
+          <div class="course_category practcode-theamer">
+            programming
+          </div>
+          <p class="course_title practcode-theamer">Introduction to computer science and programming</p>
+          <div class="course_details">
+            <p><i class="fa-solid fa-chart-line"></i>Beginner</p>
+            <p><i class="fa-solid fa-clock"></i>120 hrs</p>
+            <p><i class="fa-solid fa-star-half-stroke"></i>3.5</p>
+          </div>
+          <div class="course_view">
+            <h3>$29.99</h3>
+            <h4>View Course <i class="fa-solid fa-circle-right"></i></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardui ">
+        <div class="card_image_container">
+          <img src="{% static 'img/cardimg/programming.jpg' %}" alt="practcode online courses">
+        </div>
+        <div class="card_content">
+          <div class="course_category practcode-theamer">
+            programming
+          </div>
+          <p class="course_title practcode-theamer">Introduction to computer science and programming</p>
+          <div class="course_details">
+            <p><i class="fa-solid fa-chart-line"></i>Beginner</p>
+            <p><i class="fa-solid fa-clock"></i>120 hrs</p>
+            <p><i class="fa-solid fa-star-half-stroke"></i>3.5</p>
+          </div>
+          <div class="course_view">
+            <h3>$29.99</h3>
+            <h4>View Course <i class="fa-solid fa-circle-right"></i></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardui ">
+        <div class="card_image_container">
+          <img src="{% static 'img/cardimg/programming.jpg' %}" alt="practcode online courses">
+        </div>
+        <div class="card_content">
+          <div class="course_category practcode-theamer">
+            programming
+          </div>
+          <p class="course_title practcode-theamer">Introduction to computer science and programming</p>
+          <div class="course_details">
+            <p><i class="fa-solid fa-chart-line"></i>Beginner</p>
+            <p><i class="fa-solid fa-clock"></i>120 hrs</p>
+            <p><i class="fa-solid fa-star-half-stroke"></i>3.5</p>
+          </div>
+          <div class="course_view">
+            <h3>$29.99</h3>
+            <h4>View Course <i class="fa-solid fa-circle-right"></i></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="exploreallcoureseVector4BTN">
+      <button>Explore <i class="fa-regular fa-share-from-square"></i></button>
+    </div>
+  </div>
+  <br>
+  <br>
+    
+
+  </div>
+</div>
+<script src="{% static 'script/home-page-js/vectors.js' %}"></script>
+{% endblock %} {% block scriptcontain %}
+<script>
+  console.log("hello from home....");
+</script>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "index.html" %} {% block title %} - Courses{% endblock %}
+{% block headcontain %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/authstyles/sessionexpiry.css' %}" />
+<link rel="stylesheet" href="{% static 'css/coursecardui/All_courses.css' %}" />
+
+{% endblock %}
+{% block Mainroot %}
+<br>
+<div class="all-courses-main-top-div">
+    <div class="div-section-first">
+        <p >Home / courses</p>
+        <h2>Courses</h2>
+        <p>gain hands-on experience through interactive projects, and join a thriving learner community.</p>
+        <div class="all-course-seacrch-box-div">
+            <input type="text" placeholder="Search by Course name">
+            <button>Search</button>
+            <div class="all-courses-search-filtersdiv">
+                Apply Filter <i class="fa-solid fa-arrow-down-wide-short"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="div-section-second">
+        <img src="{% static 'img/Vectors/practcode-all-courses.png' %}" alt="">
+    </div>
+</div>
+<br>
+<div class="all-courses-display">
+    <br>
+    <div class="individual-course-card">
+        <div class="card-image">
+            <img src="{% static 'img/cardimg/programming.jpg' %}" alt="">
+        </div>
+        <div class="card-details">
+            <div class="heading-and-price">
+                <div class="heading">
+                    Programming
+                </div>
+                <span>FREE</span>
+            </div>
+            <div class="course-title">
+                Data science Foundation: Data Structure and Algorithm
+            </div>
+            <div class="card-other-details">
+                <p><i class="fa-solid fa-chart-line"></i>Bignners</p>
+                <p><i class="fa-solid fa-clock"></i>150 hrs</p>
+                <p><i class="fa-solid fa-star-half-stroke"></i>4.2(3 reviews)</p>
+            </div>
+            <button>View Course</button>
+        </div>
+
+    </div>
+    <br>
+    <div class="individual-course-card">
+        <div class="card-image">
+            <img src="{% static 'img/cardimg/programming.jpg' %}" alt="">
+        </div>
+        <div class="card-details">
+            <div class="heading-and-price">
+                <div class="heading">
+                    Programming
+                </div>
+                <span>FREE</span>
+            </div>
+            <div class="course-title">
+                Data science Foundation: Data Structure and Algorithm
+            </div>
+            <div class="card-other-details">
+                <p><i class="fa-solid fa-chart-line"></i>Bignners</p>
+                <p><i class="fa-solid fa-clock"></i>150 hrs</p>
+                <p><i class="fa-solid fa-star-half-stroke"></i>4.2(3 reviews)</p>
+            </div>
+            <button>View Course</button>
+        </div>
+
+    </div>
+</div>
+<br><br>
+
+
+
+{% endblock %}
+{% block scriptcontain %}
+<script src="{% static 'script/courses/course_details.js' %}"></script>
+
+
+{% endblock %}

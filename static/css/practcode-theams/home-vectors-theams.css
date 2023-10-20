@@ -1,0 +1,20 @@
+.homePageVector_1.practcode-dark-theam{
+    background: #05263b;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.homePageVector_1.practcode-dark-theam:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} 
+.practcode-theamer.practcode-dark-theam{
+    background-image: none;
+   
+}
+
+.practcodebtnclass.practcode-dark-theam{
+    color: aliceblue;
+}
+
+.homePageVector_3.practcode-dark-theam{
+    background: #05263b;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

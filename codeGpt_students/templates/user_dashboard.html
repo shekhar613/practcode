@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/userdashboard.css' %}">
+    <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
+    <script href="{% static 'script/userdashboard.js' %}"></script>
+</head>
+<body>
+    <div class='dashboard'>
+        <nav>
+            <h1>codeGpt</h1>
+            <div class='navbuttons'>
+                <button class='navProfilebtn'><i class="fa-solid fa-circle-user"></i></button>
+                <button class='navLogoutbtn'><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </nav>
+
+
+
+
+        <div class='subSection'>
+            <div class='sidebar' id='sidebar'>
+                <button class='sidebarToggle' id="ActivetoggleBtn" onclick="sideBarToggle()" ><i id="sidedartoggleIcon" class="fa-solid fa-angles-right"></i></button>
+                
+                <button class='sidebarBtns activeOption' id='dashboardoption1'  onclick="toggleSideBarOpions('dashboardoption0',0)"><i class="fa-solid fa-circle-user"></i>MY PROFILE </button>
+                <button class='sidebarBtns ' id='dashboardoption2' onclick="toggleSideBarOpions('dashboardoption1',1)"><i class="fa-solid fa-circle-play"></i>MY COURSES</button>
+                <button class='sidebarBtns ' id='dashboardoption3' onclick="toggleSideBarOpions('dashboardoption2',2)"><i class="fa-solid fa-table-list"></i>WISH LIST </button>
+                <button class='sidebarBtns ' id='dashboardoption4' onclick="toggleSideBarOpions('dashboardoption3',3)"><i class="fa-sharp fa-solid fa-star"></i>PREFERENCES</button>
+                <button class='sidebarBtns ' id='dashboardoption5' onclick="toggleSideBarOpions('dashboardoption4',4)"><i class="fa-solid fa-code"></i></i>CODE TEST </button>
+                <button class='sidebarBtns ' id='dashboardoption6' onclick="toggleSideBarOpions('dashboardoption5',5)"><i class="fa-solid fa-money-check-dollar"></i>PAYMENTS</button>
+                <button class='sidebarBtns ' id='dashboardoption7' onclick="toggleSideBarOpions('dashboardoption6',6)"><i class="fa-solid fa-cart-shopping"></i>PURCHASES</button>
+                <button class='sidebarBtns ' id='dashboardoption8' onclick="toggleSideBarOpions('dashboardoption7',7)"><i class="fa-sharp fa-solid fa-gear"></i>SETTINGS</button>
+                
+            </div>
+            
+            <div class='dashboardContains' id='dashboardContains'>
+              
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+<script src="{% static 'script/userdashboard.js' %}"></script>
+</html>

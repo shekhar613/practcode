@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practcode</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   
+    <div>
+        <div class='Topnavigator'
+            style="background-image: url({% static 'img/homepageBg.jpg' %});background-repeat: no-repeat; background-size: cover;">
+            <nav>
+                <h1>PRACTCODE</h1>
+                <div class='loginSignup'>
+                    <button class='NavloginBtn' onclick="window.location.href='/login'">LOGIN</button>
+                    <button class='NavsignupBtn' onclick="window.location.href='/sign-up'" >Signup</button>
+                </div>
+            </nav>
+            <div class='text_section'>
+                <div class='typingEffects'>
+                    <h2>Learn the skills with codeGpt</h2>
+                    <p>Perfection is achieved not when there is nothing more to add, but rather when there is nothing
+                        more to take away. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class='Topsection'>
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="{% static 'script/home.js' %}"></script>
+
+</html>

@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    width: 100%;
+    /* background: #000; */
+    height: 100vh;
+}
+
+.dashboard nav {
+    /* height: 60px; */
+    background: #2db19f;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard h1 {
+    padding: 16px;
+    color: #ffff;
+    font-size: 25px;
+}
+
+.navbuttons button {
+    background: transparent;
+    border: none;
+    padding: 18px 25px;
+    font-size: 30px;
+    color: #fff;
+}
+
+/* side bar section */
+.dashboard .subSection {
+
+    height: 100%;
+    display: flex;
+}
+
+.subSection .sidebar {
+    width: 200px;
+    background: #414141;
+    z-index: 99999;
+}
+
+.sidebar .sidebarBtns {
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    /* width: 100%; */
+    font-size: 15px;
+    height: 50px;
+    cursor: pointer;
+    color: #8b8989;
+    border-bottom: solid 1px #494949;
+}
+
+.sidebarBtns i {
+    padding: 20px 20px;
+}
+
+/* side bar toggles effects */
+.sidebar .sidebarBtns.activeOption {
+    color: #2db19f;
+    font-weight: 700;
+}
+
+.sidebar .sidebarToggle {
+    background: #414141;
+    border: none;
+    color: #2db19f;
+    font-size: 25px;
+    margin-left: 180px;
+    border-radius: 10%;
+    padding: 14px;
+    width: 50px;
+    box-shadow: rgba(37, 245, 217, 0.24) 10px 0px 8px;
+}
+
+/* dashboard Contains */
+
+.dashboardContains {
+    width: 100%;
+    height: 100%;
+    /* margin-left:50px; */
+}
+
+/* for extra small scree 400 */
+@media only screen and (max-width: 430px) {
+    body {
+        /* background: #000; */
+    }
+}

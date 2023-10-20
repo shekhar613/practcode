@@ -1,0 +1,65 @@
+.cardui{
+    width: 24%;
+   
+    /* height: 300px; */
+    border: solid 1px rgb(228, 228, 228);
+    border-radius: 11px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card_content{
+    width: fit-content;
+    padding: 8px;
+    height: 100%;
+}
+.card_content .course_category{
+    background: #f7f7f7;
+    padding: 5px;
+    width: max-content;
+    border-radius: 5px;
+    
+}
+.card_content .course_title{
+    width: 95%;
+    padding: 5px ;
+    padding-top:10px ;
+    font-weight: 600;
+    color: black;
+}
+.card_content .course_details{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.course_details i{
+    color: rgb(255, 217, 0);
+    padding:5px ;
+    font-size: 18px;
+    font-weight:bolder;
+}
+.course_details p{
+    font-size: 12px;
+}
+.card_content .course_view{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.card_image_container{
+    width: 90%;
+    height: 40%;
+    margin: auto;
+}
+.card_image_container img{
+    width: 100%;
+    height: 95%;
+    margin-top: 10px;
+
+    /* border-top-left-radius: 11px;
+    border-top-right-radius: 11px; */
+}
+@media only screen and (max-width: 950px){
+    .cardui{
+        width: 90%;
+        margin:15px ;
+    }
+}

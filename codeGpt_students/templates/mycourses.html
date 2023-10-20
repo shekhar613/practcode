@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link rel="stylesheet" href="{% static 'css/mycourses.css' %}">
+    <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="MycoursesNav">
+        <button onclick="toggleSidenav()" class="sidebartoggleBtn"><i class="fa-solid fa-bars"></i></button>
+        <div class="Mycourses_heading_logo"> <i class="fa-solid fa-graduation-cap"></i>
+            PRACTCODE
+        </div>
+        <div class="mycourses_Searchbox">
+            <input type="text" placeholder="Search">
+            <button class="serachbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="mycoursesNav_options">
+            <a href="">Forum</a>
+            <a href="">Get Help</a>
+            <div class="MycoursesNav_notify">
+                <i class="fa-solid fa-bell"></i>
+                <p id="mycourses_notify">1</p>
+            </div>
+            
+            <button class="MyscoursesProfile_btn">
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="Mycourses">
+        <div id="MycoursesSideNav" class="MycoursesSide_nav activeSidenav" >
+            <div class="CoursesNamedetails">
+                <i class="fa-solid fa-list CoursesNamedetailsIcon"></i>
+                <p class="CoursesNamedetailsText">Contains</p>
+            </div>
+
+            <div class="courseTopics">
+                <button class="topicName topicexpanded" id="courseTopic1" onclick="toggleTopic(1)"><p> Introduction </p><i class="fa-solid fa-caret-down" id="topicArrowIcon1"></i> </button>
+                <ul class="courseSubTopics" id="courseSubTopicId1">
+                    <li>
+                        <button class="topic openedTopic" id="subTopic1" onclick="selectSubTopic(1,5)">
+                            <i class="fa-regular fa-circle topicTick"><p>what is Python ?</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic openedTopic" id="subTopic2" onclick="selectSubTopic(2,5)">
+                            <i class="fa-regular fa-circle topicTick"><p>Python overview</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic openedTopic" id="subTopic3" onclick="selectSubTopic(3,5)">
+                            <i class="fa-regular fa-circle topicTick"><p>High level languages</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic openedTopic" id="subTopic4" onclick="selectSubTopic(4,5)">
+                            <i class="fa-regular fa-circle topicTick"><p>Applications of python</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic openedTopic" id="subTopic5" onclick="selectSubTopic(5,5)">
+                            <i class="fa-regular fa-circle topicTick"><p>Intresting about python</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="courseTopics">
+                <button class="topicName topicexpanded" id="courseTopic2" onclick="toggleTopic(2)"><p>Python Functions </p><i class="fa-solid fa-caret-down" id="topicArrowIcon2"></i> </button>
+                <ul class="courseSubTopics" id="courseSubTopicId2">
+                    <li>
+                        <button class="topic">
+                            <i class="fa-regular fa-circle topicTick"><p>what is Python ?</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic">
+                            <i class="fa-regular fa-circle topicTick"><p>Python overview</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic">
+                            <i class="fa-regular fa-circle topicTick"><p>High level languages</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic">
+                            <i class="fa-regular fa-circle topicTick"><p>Applications of python</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                    <li>
+                        <button class="topic">
+                            <i class="fa-regular fa-circle topicTick"><p>Intresting about python</p></i>
+                            
+                            <i class="fa-regular fa-bookmark topicBookmark "></i>
+                        </button>
+                        <span>4m 1s</span>
+                    </li>
+                </ul>
+            </div>
+        
+        
+        </div>
+
+
+        <div id="MycoursesBody" class="MycoursesBody activeSidenav">
+            <div class="course" id="courseContains">
+                <h4 id="subtopicID">Title</h4>
+                <p id="printingEffect"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="{% static 'script/mycourses.js' %}"></script>
+
+</html>

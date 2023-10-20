@@ -1,0 +1,154 @@
+{% extends "index.html" %} {% block title %} - Courses{% endblock %}
+{% block headcontain %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/authstyles/sessionexpiry.css' %}" />
+<link rel="stylesheet" href="{% static 'css/coursecardui/course_details.css' %}" />
+
+{% endblock %}
+{% block Mainroot %}
+<br>
+<div class="detail-header">
+    <div class="detail-header-1">
+        <h2>What You Will Lear</h2>
+        <p><i class="fa-regular fa-circle-dot"></i>Essential Concepts: Grasp fundamental [Topic/Subject] principles.</p>
+        <p><i class="fa-regular fa-circle-dot"></i>Practical Skills: Develop hands-on expertise through projects.</p>
+        <p><i class="fa-regular fa-circle-dot"></i>Advanced Techniques: Explore higher-level strategies for mastery.</p>
+    </div>
+    <div class="detail-header-2">
+        <i class="fa-solid fa-desktop"></i>
+        <h3>Course Formate</h3>
+        <p>Video Tutorials</p>
+        <p>Checking the task</p>
+        <p>Practice questions</p>
+        <p>Performance Tracking</p>
+    </div>
+    <div class="detail-header-3">
+        <i class="fa-solid fa-calendar-check"></i>
+        <h3>Duration Course</h3>
+        <p>3 Weeks</p>
+        <p>5 Video Tutorials</p>
+        <p>15 Assignments</p>
+        <p>5+ Quize and Test</p>
+    </div>
+</div>
+<div class="course-details-container">
+    <h1>Course Content</h1>
+    <div class="course-content-divisions">
+        <div class="division-first">
+            <div class="unit-section-div">
+                <h3>Section 1. Python Express Course</h3>
+                <i id="course_section_1_itag" onclick="expandcourseSection('course_section_1', this.id)"
+                    class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="course-section" id="course_section_1">
+                <div class="course-section-sidepanel">
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 1. Introduction to Python
+                            Programming</i></h4>
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 2. Install and setup Python on
+                            your
+                            Local envirnment</i></h4>
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 3. Getting start the First Hello
+                            World Program in python</i></h4>
+                </div>
+                <div class="course-section-content">
+                    <img src="{% static 'img/cardimg/programming.jpg' %}" alt="">
+                    <h4>chapter 1 : Introduction to programming</h4><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia voluptatem rem dolor
+                        distinctio
+                        omnis. Eum, nostrum ad praesentium expedita, voluptates rem omnis consequatur officia eveniet
+                        fugit
+                        voluptas odio vel maxime perferendis ab eligendi distinctio voluptate non aut sapiente quasi,
+                        necessitatibus quia eaque. Non adipisci minus nobis ratione ut dolorum?</p>
+                </div>
+            </div>
+            <br>
+            <!-- sections -->
+            <div class="unit-section-div">
+                <h3>Section 2. Introduction to python envirnment</h3>
+                <i id="course_section_2_itag" onclick="expandcourseSection('course_section_2',this.id)"
+                    class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="course-section" id="course_section_2">
+                <div class="course-section-sidepanel">
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 1. Introduction to Python
+                            Programming</i></h4>
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 2. Install and setup Python on
+                            your
+                            Local envirnment</i></h4>
+                    <h4><i onclick="selections(this)" class="sidepanel-options">chapter 3. Getting start the First Hello
+                            World Program in python</i></h4>
+                </div>
+                <div class="course-section-content">
+                    <img src="{% static 'img/cardimg/programming.jpg' %}" alt="">
+                    <h4>chapter 1 : Introduction to programming</h4><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia voluptatem rem dolor
+                        distinctio
+                        omnis. Eum, nostrum ad praesentium expedita, voluptates rem omnis consequatur officia eveniet
+                        fugit
+                        voluptas odio vel maxime perferendis ab eligendi distinctio voluptate non aut sapiente quasi,
+                        necessitatibus quia eaque. Non adipisci minus nobis ratione ut dolorum?</p>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="division-second">
+            <div class="getcoursenowdiv">
+                <div class="course-short-details">
+                    <span class="short-details-ratings"><i class="fa-solid fa-star"></i> 4.2 (ratings)</span>
+                    <h2 class="priceheading">FREE</h2>
+                    <button>Get Course</button>
+                    <div class="short-details-block">
+                        <div>
+                            <i class="fa-solid fa-user"></i> Created
+                        </div>
+                        <div>
+                            Practcode
+                        </div>
+                    </div>
+
+                    <div class="short-details-block">
+                        <div>
+                            <i class="fa-solid fa-chart-simple"></i> Level
+                        </div>
+                        <div>
+                            Bignner
+                        </div>
+                    </div>
+
+                    <div class="short-details-block">
+                        <div>
+                            <i class="fa-regular fa-clock"></i> Duration
+                        </div>
+                        <div>
+                            120 Hours
+                        </div>
+                    </div>
+
+                    <div class="short-details-block">
+                        <div>
+                            <i class="fa-solid fa-person-chalkboard"></i></i> Lessons
+                        </div>
+                        <div>
+                            42
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br><br>
+
+
+
+{% endblock %}
+{% block scriptcontain %}
+<script src="{% static 'script/courses/course_details.js' %}"></script>
+
+
+{% endblock %}

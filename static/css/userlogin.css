@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.LoginForm{
+    display: flex;
+    background: #000;
+    margin: 0;
+    height: 100vh;
+   
+
+}
+.LoginForm .LoginSideImg{
+    width: 50%;
+    background: #000;
+   
+}
+.LoginSideImg img{
+    width: 100%;
+    height: 100vh;
+    
+}
+.LoginForm .LoginSideForm{
+    width: 50%;
+    background: #35c9b5;
+}
+
+.formLogo{
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    padding:50px;
+}
+.LoginFormBox{
+    padding: 20px;
+    background: #fff;
+    width:45%;
+    margin: auto;
+    border-radius: 10px;
+  
+    
+}
+
+.LoginFormBox h2{
+    text-align: center;
+    color: #535353;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.LoginFormBox .emailInput, .passwordInput{
+    margin-top:25px ;
+    width: 100%;
+}
+.emailInput,.passwordInput{
+    display: flex;
+    border: solid 1px rgb(201, 201, 201);
+    border-radius: 5px;
+}
+.emailInput i,.passwordInput i{
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 18px;
+    color: #919191;
+}
+
+.emailInput input,.passwordInput input{
+    height: 45px;
+    width: 100%;
+    padding: 15px;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.checkInput{
+    width: 100%;
+    display: flex;
+}
+.checkInput input{
+    margin-top: 20px;
+   
+}
+.checkInput p{
+    padding-top:15px ;
+    padding-left:12px ;
+    color: #535353;
+}
+
+.LoginFormBox button{
+    
+    margin-top: 25px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #ff7b10;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 111px;
+    border: none;
+    width: 100%;
+}
+
+.LoginSideForm .createAccountLink{
+    color: #ffff;
+    text-align: center;
+}
+.createAccountLink button{
+    color: blue;
+    background:transparent;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+
+
+}
+.forgotPassword{
+    text-align: center;
+}
+/* for tablets view */
+/* 
+@media only screen and (max-width: 900px) {
+    body{background: #000;
+    }
+    .LoginForm .LoginSideImg{
+        display: none;
+    }
+
+    .LoginForm .LoginSideForm{
+        width: 100%;
+    }
+} */
+
+
+/* for mobile view */
+@media only screen and (max-width: 900px){
+    .LoginForm .LoginSideImg{
+        display: none;
+    }
+    .LoginForm .LoginSideForm{
+        width: 100%;
+    }
+    .LoginFormBox{
+        width: 85%;
+    }
+    
+    .emailInput input,.passwordInput input{
+        height: 50px;
+        font-size: 15px;
+    }
+    .emailInput i,.passwordInput i{
+        padding-left: 18px;
+        padding-top: 15px;
+        font-size: 25px;
+    }
+    .LoginSideForm .createAccountLink{
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 15px;
+        padding: 60px;
+    }
+    .LoginFormBox button{
+        width: 100%;
+    }
+    .checkInput{
+        width: 100%;
+        padding: 14px;
+    }
+   
+    .checkInput p{
+        padding-top:16px ;
+        color: #535353;
+
+    }
+}

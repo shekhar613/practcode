@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>● Sign-up</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/lo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/PractCodePageLoader.css' %}">
+    <script
+      src="https://kit.fontawesome.com/215c5cf425.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="background:  transparent url({% static 'img/BG/bg1.jpg' %}) center ;">
+    <!-- <div id="loader" style="display: none;">Loading...</div> -->
+    <div id="PractPageLoader" class="atmobileView">
+      <div id="practloaderImgDIV"><img src="{% static 'img/vector1.jpg' %}" alt=""></div>
+      
+      <div  id="textContenPractcode"></div>
+      
+    </div>
+    <div class="signupContainer">
+      <div class="signuptopLogo">
+        <!-- <img src="{% static 'img/black&blue.png' %}" alt="" /> -->
+        <h3></h3>
+      </div>
+
+      <div class="signup_mainbox">
+        <div class="signup_heading">
+          <h2 id="signup_heading_H2">Sign Up</h2>
+          <p id="signup_heading_P">CREATE A NEW ACCOUNT</p>
+        </div>
+        {% comment %}
+        <button class="signup_with_google">
+          <i class="fa-brands fa-google"></i> Continue with Google
+        </button>
+        <p>OR</p>
+        {% endcomment %}
+
+        <form name="createuserForm" method="POST" id="post-createuser_form">
+          <div id="userdata">
+            {% csrf_token %}
+
+            <div>
+              <p id="usernameformerrorP">Username:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-regular fa-user"></i>
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="nameformerrorP">Name:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-regular fa-user"></i>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="First name and last name"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="emailformerrorP">Email:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-regular fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="email@gmail.com"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="contactformerrorP">Contact:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-regular fa-address-book"></i>
+                <input
+                  type="tel"
+                  id="contact"
+                  placeholder="Phone number"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="collegeformerrorP">College:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-solid fa-school"></i>
+                <input
+                  type="text"
+                  id="college"
+                  placeholder="College name"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="courseformerrorP">Course:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-solid fa-book"></i>
+                <input
+                  type="text"
+                  id="course"
+                  placeholder="Course name"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="yearformerrorP">Year:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-regular fa-calendar"></i>
+                <input
+                  type="number"
+                  id="year"
+                  placeholder="Course current year"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <p id="passwordformerrorP">Password:</p>
+              <div class="inputBoxandIcon">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="********************"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div id="userVarificationCodeSec">
+            <p id="varificationCodeformerrorP">Varification Code:</p>
+            <div class="inputBoxandIcon">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="text"
+                id="VarificationCode"
+                placeholder="Varification code"
+                name="Varification code"
+              />
+            </div>
+            <p>Check your mail for varification code</p>
+          </div>
+
+          <div class="formBtns">
+            <button id="practcodeSignUpBTN" class="signupBtn" type="submit">Sign up</button>
+          </div>
+          <div class="LoginDirect" id="FormuserLoginDirector">
+            <p>Already have an account? <a href="/login">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'script/createUser.js' %}"></script>
+  </body>
+</html>

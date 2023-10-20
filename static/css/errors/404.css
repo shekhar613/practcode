@@ -1,0 +1,36 @@
+.page-not-found{
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    
+}
+.page-not-found img{
+    width: 50%;
+    border-bottom: 1px dashed gold;
+    border-left: 2px dashed rgb(132, 202, 255);
+    border-right: 2px dashed rgb(132, 202, 255);
+}
+.page-not-found-options{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.page-not-found-options button{
+    padding: 14px;
+    background: #022576;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+/* for mobile view */
+@media only screen and (max-width: 900px){
+    .page-not-found img{
+        width: 100%;
+    }
+}

@@ -1,0 +1,183 @@
+{
+    "Python": {
+        "private": [
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            }
+        ],
+        "public": [
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            }
+        ]
+    },
+    "Java": {
+        "private": [
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            }
+        ],
+        "public": [
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            }
+        ]
+    },
+    "C++": {
+        "private": [
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            }
+        ],
+        "public": [
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            }
+        ]
+    },
+    "C": {
+        "private": [
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "message": "",
+                "status": ""
+            }
+        ],
+        "public": [
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            },
+            {
+                "output": "",
+                "expected": "",
+                "input": "",
+                "message": "",
+                "status": ""
+            }
+        ]
+    }
+}
+

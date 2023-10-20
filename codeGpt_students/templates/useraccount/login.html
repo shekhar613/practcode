@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>● Practcode - Login</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/lo.png' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'img/lo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/215c5cf425.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="background:  transparent url({% static 'img/BG/loginbg.jpg' %}) center ;">
+    <div class="signupContainer">
+      <div class="signuptopLogo">
+        <img src="{% static 'img/black&blue.png' %}" alt="" />
+        <h3></h3>
+      </div>
+      <div id="loginmsg">error</div>
+      <div class="signup_mainbox">
+        <div class="signup_heading">
+          <h2>Login</h2>
+          <p>ACCESS YOUR ACCOUNT</p>
+        </div>
+        {% comment %}
+        <button class="signup_with_google">
+          <i class="fa-brands fa-google"></i> Continue with Google
+        </button>
+        <p>OR</p>
+        {% endcomment %}
+
+        <form name="userlogin" method="POST" id="post-userlogin_form">
+          {% csrf_token %}
+          <div>
+            <p id="usernameformerrorP">Username:</p>
+            <div class="inputBoxandIcon">
+              <i class="fa-regular fa-user"></i>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <p id="passwordformerrorP">Password:</p>
+            <div class="inputBoxandIcon">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="********************"
+                required
+              />
+            </div>
+          </div>
+          <div class="formBtns">
+            <button class="signupBtn" type="submit">Log in</button>
+            <div class="frgtPswdDiv">
+              <a href="/forgetpassword">Forgot Password ?</a>
+            </div>
+          </div>
+          <div class="LoginDirect">
+            <p>Not a student ?<a href="/sign-up"> Sign Up Now</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'script/userLogin.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ● Practcode {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/PractCodePageLoader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/practcode-theams/index-theams.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/lo.png' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
+    {% block headcontain %}{% endblock %}
+</head>
+
+<body ondragstart="return false;" ondrop="return false;">
+    <button id="checkauth"></button>
+    <div id="preloader"
+        style="background:  #8cc5dd url({% static 'img/preloader.gif' %}) no-repeat center ;background-size: 18%"></div>
+    <nav class="PractcodeNav practcode-theamer">
+        <button onclick="PractcodetoggleSidenav()" class="PractcodeNavsidebartoggleBtn"><i
+                class="fa-solid fa-bars"></i></button>
+        <div class="PractcodeNav_heading_logo" style="display: flex;"> <img alt="Practcode"
+                src="{% static 'img/lo.png' %}" style="width: 50px; height: 40px;"></img>
+            <h3 style="padding-top: 10px;">PRACTCODE</h3>
+        </div>
+        <div class="navtaboptions practcode-theamer">
+            <button ><a class="home" href="/">Home</a></button>
+            <button><a class="course-details" href="/course-details">Courses</a></button>
+            <button><a class="services" href="/services">Services</a></button>
+            <button><a href="/">Blogs</a></button>
+            <div id="theamchangerbtnDIV" class="theamchangerbtn"><i id="theamchangericonID" class="fa-regular fa-sun" onclick="changemytheam()"></i></div>
+        </div>
+        <div class="PractcodeNav_options">
+
+            <div id="navsignin_signupBTNs">
+                <button class="PractcodeNav_login"><a href="/login">Log in</a></button>
+                <button class="PractcodeNav_signup"><a href="/sign-up">Sign up</a></button>
+            </div>
+            <div class="PractcodeNav_notify">
+                <i class="fa-solid fa-bell"></i>
+                <p id="PractcodeNav_notify"></p>
+            </div>
+
+            <button class="PractcodeNavProfile_btn" id="dropdown-button">
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="PractcodeProfiledropdown" id="dropdown-content">
+        <a href="/dashboard"><button><i class="fa-solid fa-user"></i> Profile</button></a>
+        <br>
+        <a href=""><button><i class="fa-regular fa-pen-to-square"></i>My courses</button></a>
+        <br>
+        <a href=""><button onclick="logoutnow()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button></a>
+    </div>
+    <div class="PractcodeNavSideBody">
+        <div id="PractcodeSideNavid" class="PractcodeSide_nav">
+            <div class="PractcodeSideNavDetails" id="PractcodeSideNavDetailsId">
+                <i class="fa-solid fa-list PractcodeSideNavDetailsIcon"></i>
+                <p class="PractcodeSideNavDetailsText">Contains</p>
+            </div>
+
+            <!-- contains when user is not loged in -->
+            <div id="PractcodeSidebar_userstatusid" class="PractcodeSidebar_userstatus">
+                <h3>Practcode</h3>
+                <a href="/login"><button>Log in</button></a>
+                <h5>Or</h5>
+                <a href="/sign-up"><button>Sign up</button></a>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- other section comes here -->
+        <div id="PractcodeMainRootid" class="practcodeMainRoot  practcode-theamer">
+            {% block Mainroot %}
+            {% endblock %}
+        </div>
+
+    </div>
+    <footer>
+        <div class="footerInfo">
+
+            <div class="footerdiv1">
+                <div class="footerdiv1-peactcode">
+                    <img src="{% static 'img/lo.png' %}" alt="Practcode ,The Best Online Courses Of All Time">
+                    <h3>Practcode</h3>
+                </div>
+                <p>Learn from industry experts, gain hands-on experience through interactive Practices, and join a
+                    thriving learner community.
+
+                    With flexible schedules and up-to-date content, PractCode is your platform to master programming.
+                </p>
+                <div class="footerdiv1-social-icons">
+                    <a href=""><button><i class="fa-brands fa-square-instagram"></i></button></a>
+                    <a href=""><button><i class="fa-brands fa-facebook"></i></button></a>
+                    <a href=""><button><i class="fa-brands fa-square-twitter"></i></button></a>
+                </div>
+            </div>
+
+            <div class="footerdiv2">
+                <h3>Latest Blog Posts</h3>
+                <div class="footerdiv2-latestposts">
+                    <img src="{% static 'img/lo.png' %}" alt="Practcode Latest posts">
+                    <p>Data Analyst Resume:A Compete Guid <br>17 August 2023 </p>
+                </div>
+                <div class="footerdiv2-latestposts">
+                    <img src="{% static 'img/lo.png' %}" alt="Practcode Latest posts">
+                    <p>Data Analyst Resume:A Compete Guid <br>17 August 2023 </p>
+                </div>
+            </div>
+
+         
+        </div>
+        <div class="footercopyright">
+            <p>Copyright © 2023 Practcode</p>
+        </div>
+
+    </footer>
+
+    <script>
+        var loader = document.getElementById("preloader")
+        window.addEventListener('load', function () {
+            loader.style.display = "none"
+        })
+
+    </script>
+
+</body>
+<script src="{% static 'script/index.js' %}"></script>
+<script src="{% static 'script/Authutilities/islogged.js' %}"></script>
+{% block scriptcontain %}{% endblock %}
+
+</html>

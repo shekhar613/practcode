@@ -1,0 +1,22 @@
+{% extends "index.html" %} {% block title %} - Home{% endblock %}
+{% block headcontain %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/errors/404.css' %}">
+<link rel="stylesheet" href="{% static 'css/practcode-theams/home-vectors-theams.css' %}">
+<link rel="stylesheet" href="{% static 'css/practcode-theams/home-page-cards-theams.css' %}">
+{% endblock %}
+{% block Mainroot %}
+<div class="page-not-found">
+    <img src="{% static 'img/Vectors/404.png' %}" alt="">
+</div>
+<div class="page-not-found-options">
+    <button>Let's Back To Work</button>
+</div>
+
+
+{% endblock %} {% block scriptcontain %}
+<script>
+  console.log("hello from home....");
+</script>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <title>Ace Editor Page</title>
+  <!-- <script src="static/js/language.js"></script>  -->
+  <link rel='stylesheet' href="{% static 'css/compiler.css' %}">
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <div class="navbar">
+
+    <div class="dropdown">
+      <a href="#">Language</a>
+      <div class="dropdown-content">
+
+        <a href="#" onclick="changeLanguage('java')">Java</a>
+        <a href="#" onclick="changeLanguage('python')">Python</a>
+      </div>
+    </div>
+  </div>
+  <!-- Ace Editor -->
+  <form method="POST">
+    {% csrf_token %}
+    <div id="editor"></div>
+    <input type="text">
+  </form>
+
+  <!-- Question and testcases -->
+  <div id="question">
+    <h2>Question</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod orci sed felis lacinia, nec euismod
+      libero suscipit. Donec imperdiet lobortis fermentum. Morbi malesuada mauris non lacus auctor dignissim. Fusce vel
+      sapien non nisl aliquam interdum.</p>
+    <h2>Testcases</h2>
+    <ul>
+      <li>Testcase 1</li>
+      <li>Testcase 2</li>
+      <li>Testcase 3</li>
+      <select id="language-select">
+        <option value="java">Java</option>
+        <option value="python">Py</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+      </select>
+
+      <button id="run-button">Run</button>
+      <div id="output"></div>
+    </ul>
+  </div>
+  <!-- Ace Editor script -->
+  <!-- <script src="{% static 'script/compiler_data_response.js' %}"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/python");
+    editor.setShowPrintMargin(false);
+    editor.setOptions({
+      behavioursEnabled: true
+    });
+    var languageSelect = document.getElementById("language-select");
+
+    var runButton = document.getElementById("run-button");
+    var outputDiv = document.getElementById("output");
+
+
+    runButton.addEventListener("click", function () {
+      var code = editor.getValue();
+      var language = languageSelect.value;
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.response.status === 200) {
+            outputDiv.textContent = xhr.response.output;
+          } else {
+            outputDiv.textContent = xhr.response.error;
+          }
+        }
+      };
+      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+      xhr.open("POST", "/codeoutput");
+      xhr.setRequestHeader('X-CSRFToken', csrftoken, "Content-Type", "application/json;charset=UTF-8");
+      xhr.responseType = "json";
+      xhr.send(JSON.stringify({
+        "code": code,
+        "language": language
+      }));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

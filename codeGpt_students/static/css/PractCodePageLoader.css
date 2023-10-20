@@ -1,0 +1,62 @@
+
+/* Pageloader */
+#PractPageLoader{
+    width: 60%;
+    margin: auto;
+    height: auto;
+    /* display: flex; */
+    font-family: 'Zilla Slab', serif;
+    /* background: #000; */
+    display: none;
+    text-align: left;
+    
+
+}
+
+
+#PractPageLoader #practloaderImgDIV{
+    width:30%;
+    height: 20%;
+    text-align: center;
+}
+#practloaderImgDIV img{
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    background-size: auto;
+}
+
+#PractPageLoader #textContenPractcode{
+    padding: 14px;
+    margin: auto;
+    width: 70%;
+    /* height: 100%; */
+    font-size: 17px;
+    letter-spacing: 1px;
+  
+}
+#textContenPractcode p{
+    background: white;
+}
+#PractPageLoader.atmobileView{
+    display:flex;
+}
+@media only screen and (max-width: 900px){
+    #PractPageLoader{
+        width: 90%;
+    }
+    #PractPageLoader.atmobileView{
+        display: block;
+    }
+    #PractPageLoader #practloaderImgDIV{
+        width:50%;
+        height: 30%;
+        text-align: center;
+    }
+    #PractPageLoader #textContenPractcode{
+        width: 100%;
+        /* background: #000; */
+    }
+}
+/*  */
+

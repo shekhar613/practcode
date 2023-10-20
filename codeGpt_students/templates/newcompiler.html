@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <title>Test code </title>
+  <!-- <script src="static/js/language.js"></script>  -->
+  <link rel='stylesheet' href="{% static 'css/newcompiler.css' %}">
+  <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+  <nav class="testcodenav">
+    <h2>codeGpt</h2>
+
+    <div class="testcodeLanguages">
+      <p>Language</p>
+      <select id="language-select">
+        <option value="java">Java</option>
+        <option value="python">Py</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+      </select>
+    </div>
+  </nav>
+
+  
+  <div class="testcodeeditor">
+    <!-- questions -->
+    <div class="testcodeQuestions">
+      <div class="questionsNav" >
+        <button class="questionsNav_toggle" onclick="quenvatoggle()" ><i class="fa-solid fa-bars"></i></button>
+        
+      </div>
+      
+
+      <div class="questionsNavside" id="questionsNavside" >
+        <ul>
+         
+          {% for key, value in testcases.items %}
+            {% if key == 0 %} 
+              <li><button class="questionsBtns activequestion" onclick="questionToggle('{{key}}',`{{totalQues}}`,a)" id='{{key}}'> <i id='{{ value|slice:"1:2"|join:", " }}' class="fa-regular fa-circle-dot activedot"></i>{{ value|slice:"1"|join:", " }}</button></li>
+            {% else %}
+              <li ><button class="questionsBtns" onclick="questionToggle('{{key}}',`{{totalQues}}`,a)" id='{{key}}'> <i id='{{ value|slice:"1:2"|join:", " }}' class="fa-regular fa-circle"></i>{{ value|slice:"1"|join:", " }}</button></li>
+            {% endif  %}
+          {% endfor %}
+        
+        </ul>
+        
+      </div>
+      <h4>Questions</h4>
+      <p id="QuestionText">
+        {{ testcases.0|slice:"1"|join:", " }} 
+      </p>
+      <!-- <h4>Testcases</h4> -->
+      <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquid illo obcaecati in sit dolorum natus reprehenderit minima distinctio cumque, quo deleniti aperiam nostrum corporis, eum beatae vel eos labore?</p> -->
+      <h4>Example :</h4>
+      <div class="testCodeExample">
+        <b>Input:</b>
+        <p id="Example_inputs"></p>
+        <b>Output:</b>
+        <p id="Example_outputs"></p>
+        <b>Explaination</b>
+        <p id="question_explaination" ></p>
+      </div>
+
+      
+      <h4 id="Constraints_heading">Constraints:</h4>
+      <div class="testcodeConstraints" id="QuestionsConstraint">
+          
+      </div>
+
+    </div>
+   
+    <div class="EditorArea">
+      <!-- Ace Editor -->
+      
+      <div class="editor">
+        <!-- Editor -->
+        <form method="POST">
+          {% csrf_token %}
+          <div id="editor"></div>
+          <input type="text">
+        </form>
+      </div>
+
+
+      <div class="output">
+        <div class="headingAndButton">
+          <h4>Test Cases</h4>
+          <button class="testcodeRun" id="run-button">Test Code</button>
+        </div>
+        <div class="Testcases_and_ouputs">
+          <div class="testcase_status">
+            <button class="testcaseStatusBtn" id="testcase1"><i class="fa-regular fa-circle"></i> TestCase 1</button>
+            <button class="testcaseStatusBtn" id="testcase2"><i class="fa-regular fa-circle"></i> TestCase 2</button>
+          </div>
+          <div class="outputBox">
+            <b>Output</b>
+            <p id="realcodeOutput"> explicabo. Quas blanditiis itaque numquam ill</p>
+            <b>Expected Output</b>
+            <p id="expectedcodeOutput">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+        </div>
+        <p class="outputText" id="output"></p>
+      </div>
+    </div>
+
+  </div>
+  
+  <script type="text/javascript"> 
+    var a = "{{ExamplesQuestion}}";
+    a = JSON.parse(a.replace(/&quot;/g,'"'))
+    document.getElementById('question_explaination').textContent=a[1][0]
+    document.getElementById('Example_inputs').textContent=a[1][1]
+    document.getElementById('Example_outputs').textContent=a[1][2]
+    
+    </script>
+
+<!-- Ace Editor script -->
+  <script src="{% static 'script/compiler_data_response.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/python");
+    editor.setShowPrintMargin(false);
+    editor.setOptions({
+      behavioursEnabled: true
+    });
+    var languageSelect = document.getElementById("language-select");
+
+    var runButton = document.getElementById("run-button");
+    var outputDiv = document.getElementById("output");
+    var realcodeOutput = document.getElementById("realcodeOutput");
+
+
+    runButton.addEventListener("click", function () {
+      var code = editor.getValue();
+      var language = languageSelect.value;
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            // outputDiv.textContent = `${xhr.response[2][0]["status"]} _ ${xhr.response[2][0]["msg"]}` ;
+            // console.log(`${xhr.response[2][0]["status"]} _ ${xhr.response[2][0]["msg"]}` )
+            console.log(xhr.response)
+           
+
+
+        }
+      };
+      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+     
+      xhr.open("POST", "/codeoutput");
+      xhr.setRequestHeader('X-CSRFToken', csrftoken, "Content-Type", "application/json;charset=UTF-8");
+      xhr.responseType = "json";
+      xhr.send(JSON.stringify({
+        "code": code,
+        "language": language,
+        "questionId":window.selectedActive_question,
+        "mode":"Testcode"
+      }));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
