@@ -1,0 +1,424 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+/* Practcode Navbar */
+.PractcodeNav{
+    /* background: #2196f3; */
+    background: #fff;
+    display: flex;
+    padding: 5px;
+}
+.PractcodeNavsidebartoggleBtn{
+    
+    padding: 10px;
+    background: transparent;
+    border: none;
+}
+.PractcodeNavsidebartoggleBtn i{
+    cursor: pointer;
+    color: #c2e8ff;
+    font-size: 25px;
+    margin: 5px;
+}
+.PractcodeNav_heading_logo{
+    /* color: #ffffff; */
+    color: #2196f3;
+    padding: 10px;
+    /* font-size: 22px; */
+    margin-left: 2%;
+    font-weight: 600;
+    border-bottom: 5px dotted #2196f3;
+}
+
+.PractcodeNav_options{
+    display: flex;
+    /* background: #000; */
+    color: #ffffff;
+    padding: 5px;
+    margin-left: 2%;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    right:60px;
+    
+}
+.PractcodeNav_options a{
+    text-decoration: none;
+    color: #c2e8ff;
+    padding: 15px;
+    font-size: 18px;
+}
+.PractcodeNav_options i{
+    padding: 5px;
+    font-size: 22px;
+}
+.PractcodeNav_options .PractcodeNav_notify{
+    cursor: pointer;
+    background:transparent;
+    border-radius:11px ;
+    height: min-content;
+    width:fit-content;
+    margin: 10px;
+    display: flex;
+
+}
+.PractcodeNav_notify{
+    color: #2196f3;
+}
+.PractcodeNav_notify #PractcodeNav_notify{
+    /* background: red; */
+    padding: 8px;
+    color: #2196f3;
+
+
+}
+.PractcodeNavProfile_btn{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #2196f3;
+    margin-left:15px;
+}
+
+/* PractcodeNavSideBody section starts here */
+.PractcodeNavSideBody{
+    display: flex;
+}
+
+
+.PractcodeSide_nav{
+    transition: all 0.25s;
+    width: 0%;
+    min-height: 100vh;
+    max-height: max-content;
+    background: #05263b;
+    /* background: #084c76; */
+    z-index: 9999;
+}
+.PractcodeSide_nav.activeSidenav{
+    width: 25%;
+    
+}
+.MycoursesBody{
+    /* width: 100%; */
+    height: 100vh;
+    
+}
+.PractcodeSide_nav.activeSidenav{
+    width: 25%;
+}
+/* courses topics display */
+.PractcodeSideNavDetails{
+    display: flex;
+    border-bottom: solid 1px #494949;
+    margin-top: 10px;
+}
+.PractcodeSideNavDetails .PractcodeSideNavDetailsIcon,
+.PractcodeSideNavDetailsText{
+    color: #ffff;
+    font-size: 22px;
+    padding: 15px;
+}
+
+
+/* PractcodeSidebar_userstatus style */
+.PractcodeSidebar_userstatus{
+    position: relative;
+    transition: all 0.50s;
+    top: 100px;
+    width: 0%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    color: #bbbbbb;
+    display: none;
+}
+.PractcodeSidebar_userstatus.activeuser{
+    width: 90%;
+    display: block;
+}
+.PractcodeSidebar_userstatus h3{
+    font-size: 20px;
+    color: #bbbbbb;
+    padding: 14px;
+    letter-spacing: 2px;
+    
+
+}
+.PractcodeSidebar_userstatus button{
+    width: 80%;
+    background:#2196f3;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px;
+    cursor: pointer; 
+} 
+ 
+#PractcodeSideNavDetailsId{
+    display: none;
+} 
+
+/*  */
+
+/*  preloader  */
+#preloader{
+   
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+/*  */
+.practcodeMainRoot{
+    width: 100%;
+    padding: 10px;
+}
+
+/* Practcode Profile dropdown */
+.PractcodeProfiledropdown{
+    position: absolute;
+    background: #ffffff;
+    width: auto;
+    height: auto;
+    right: 20px;
+    top: 80px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+
+    display: none;
+    transition: height 0.5s ease;
+    overflow: hidden;
+}
+.PractcodeProfiledropdown a{
+    
+    text-decoration: none;
+
+    
+}
+.PractcodeProfiledropdown a button{
+    background: transparent;
+    color: #909294;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    text-align: left;
+    margin: auto;
+    cursor: pointer;
+}
+
+/* btns */
+.PractcodeNav_login,
+.PractcodeNav_signup{
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    margin-right: 10px;
+    background: #006caf;
+    padding: 10px;
+    color: white;
+    height: 40px;
+    font-size: 14px;
+    margin-top: 8px;
+    border-radius:5px ;
+    cursor: pointer;
+
+}
+/* tab options */
+.navtaboptions{
+    /* background: #2196f3; */
+    width: 30%;
+    margin-left: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navtaboptions button{
+    border: none;
+    background: transparent;
+}
+.navtaboptions button a{
+    text-decoration: none;
+    color: #05263b;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.navtaboptions .theamchangerbtn{
+    background: #eeeeee;
+    width: 10%;
+    border-radius: 11px;
+    height: 20px;
+    text-align: left;
+    align-items: left;
+    cursor: pointer;
+    transition: align-items 2s;
+    
+
+}
+.navtaboptions .theamchangerbtn i.fa-sun{
+    font-size: 20px;
+    /* padding: 8px; */
+    position: relative;
+    
+}
+/*  */
+
+footer{
+    width: 100%;
+    /* height: 80vh; */
+    background: #000;
+    top:10;
+    position: sticky;
+    border-top: 3px dashed gold;
+}
+footer .footerInfo{
+    padding-top: 14px;
+    width: 90%;
+    display: flex;
+    margin: auto;
+}
+.footerInfo .footerdiv1{
+    width: 70%;
+    margin: auto;
+   
+}
+.footerdiv1 .footerdiv1-peactcode{
+    display: flex;
+    color: #2196f3;
+    align-items: center;
+    border-bottom: 1px dashed #2196f3;
+    width: 20%;
+}
+.footerdiv1-peactcode img{
+    width: 25%;
+}
+.footerdiv1 p{
+    padding: 14px;
+    width: 80%;
+    letter-spacing: 2px;
+}
+.footerdiv1-social-icons button{
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+.footerdiv1-social-icons i{
+    font-size: 25px;
+    padding: 14px;
+    color: gold;
+}
+
+
+
+
+
+.footerInfo .footerdiv2{
+    width: 30%;
+    margin: auto;
+}
+.footerdiv2 h3{
+    color: #fff;
+    border-bottom: 1px dashed gold;
+    padding: 14px;
+}
+.footerdiv2 .footerdiv2-latestposts{
+    display: flex;
+    width: 100%;
+}
+.footerdiv2-latestposts img{
+    width: 20%;
+}
+
+.footercopyright{
+    width: 80%;
+    margin: auto;
+    border-top: 1px dotted #2196f3;
+    text-align: center;
+}
+
+/* checkauth */
+#checkauth{
+    display: none;
+}
+
+
+
+
+/* for mobile view */
+@media only screen and (max-width: 950px){
+    .navtaboptions{
+        display: none;
+    }
+    .PractcodeNav_Searchbox,.PractcodeNav_options a{
+        display: none;
+    }
+    .PractcodeNav_options{
+        right: 10px;
+        padding: 0px;
+    }
+    .PractcodeNav_heading_logo,.PractcodeNavsidebartoggleBtn i{
+     font-size: 18px;
+     
+    }
+    .practcodeMainRoot.activeSidenav{
+        display: none;
+    }
+    
+    /* side navbar responsive */
+    
+    .PractcodeSide_nav.activeSidenav{
+        width: 100%;
+    }
+    .MycoursesBody.activeSidenav{
+        display: none;
+    }
+    .PractcodeNav_login,.PractcodeNav_signup{
+        display: none;
+    }
+    /* footer */
+    footer .footerInfo{
+        padding-top: 14px;
+        width: 100%;
+    }
+    footer .footerInfo{
+        display: block;
+    }
+    .footerInfo .footerdiv1{
+        width: 100%;
+    }
+    .footerdiv1 p{
+        width: 100%;
+    }
+
+    .footerInfo .footerdiv2{
+        width: 100%;
+    }
+    .footercopyright{
+        width: 40%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        /* display: none; */
+    }
+    .footercopyright p{
+        text-align: center;
+    }
+   
+}
+@media only screen and (max-width: 410px){
+    .PractcodeNav_notify,.PractcodeNav_notify i,#PractcodeNav_notify{
+        display: none;
+    }
+}   

@@ -1,0 +1,27 @@
+.sessionExpire{
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    /* height: 100vh; Adjust as needed */
+    margin: auto;
+    /* background: rgb(231, 231, 231); */
+    
+}
+.sessionExpire .sessionexpire_container{
+    background: #fabfbf;
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    border-radius: 1px;
+    border-color: rgb(255, 99, 60);
+    border-style: solid;
+    border-radius: 5px;
+    color: red;
+    padding: 14px;   
+
+}
+#sessionstatusdiv{
+    display: none;
+}

@@ -1,0 +1,17 @@
+/* .practcode-light-theam{
+    background: white;
+} */
+.practcode-dark-theam{
+    background: #05263b;
+    color: aliceblue;
+}
+.practcode-dark-theam button a{
+    color: aliceblue;
+}
+.practcode-dark-theam #theamchangerbtnDIV{
+    background: #0a5b8d;
+}
+.practcode-dark-theam i{
+    color: aliceblue;
+
+}
