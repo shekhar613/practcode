@@ -285,31 +285,36 @@ def admin(request):
 
 # API VIEWS TO HANDLE REQUESTS
 class Admin_access(APIView):
-    def post(self,request):
-          try:
-            # saving Course data
-            data = {'title':request.data['overview'][0],
-                    'category':request.data['overview'][1],
-                    'level':request.data['overview'][2],
-                    'duration':request.data['overview'][3],
-                    'price':request.data['overview'][4],
-                    'description':request.data['overview'][5],
-                    'numberOfSections':request.data['overview'][6],
-                    'sectionData':request.data['section_data']
-                }
-            
-            print(data)
-            overview = add_Course_overview(data =data)
-            if not overview.is_valid():
-                print(overview.errors)
-                return Response({"status":overview.errors,"error":True})
+    try:
+
+        def post(self,request):
+            try:
+                # saving Course data
+                data = {'title':request.data['overview'][0],
+                        'category':request.data['overview'][1],
+                        'level':request.data['overview'][2],
+                        'duration':request.data['overview'][3],
+                        'price':request.data['overview'][4],
+                        'description':request.data['overview'][5],
+                        'numberOfSections':request.data['overview'][6],
+                        'sectionData':request.data['section_data']
+                    }
                 
-            overview.save()
+                print(data)
+                overview = add_Course_overview(data =data)
+                if not overview.is_valid():
+                    print(overview.errors)
+                    return Response({"status":overview.errors,"error":True})
+                    
+                overview.save()
 
-            return Response({"status":"Done",'error':False})
-          except Exception as AddcourseError:
-                return Response({"status":AddcourseError,"error":True})
-
+                return Response({"status":"Done",'error':False})
+            except Exception as AddcourseError:
+                    return Response({"status":AddcourseError,"error":True})
+    except Exception as mainBug:
+        lines = ['bug',mainBug]
+        with open('Debugging.txt', 'w') as f:
+            f.write('\n'.join(lines))
       
     def get(self,request,mode):
         
