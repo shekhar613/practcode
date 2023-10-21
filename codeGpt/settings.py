@@ -210,13 +210,3 @@ EMAIL_HOST_PASSWORD = "qtjxuowzzoajwfla"
 
 
 "qtjxuowzzoajwfla"
-'''node_modules/@babel/helper-compilation-targets": {
-      "version": "7.20.7",
-      "resolved": "https://registry.npmjs.org/@babel/helper-compilation-targets/-/helper-compilation-targets-7.20.7.tgz",
-      "integrity": "sha512-4tGORmfQcrc+bvrjb5y3dG9Mx1IOZjsHqQVUz7XCNHO+iTmqxWnVg3KRygjGmpRLJGdQSKuvFinbIb0CnZwHAQ==",
-      "dependencies": {
-        "@babel/compat-data": "^7.20.5",
-        "@babel/helper-validator-option": "^7.18.6",
-        "browserslist": "^4.21.3",
-        "lru-cache": "^5.1.1",
-        "semver": "^6.3.0"'''
