@@ -34,4 +34,4 @@ class add_Course_overview(serializers.ModelSerializer):
     class Meta:
         model = Course_overview
         fields = '__all__'
-
+    

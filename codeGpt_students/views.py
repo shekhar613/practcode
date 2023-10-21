@@ -300,13 +300,21 @@ class Practcode_Courses(APIView):
                             'sectionData':request.data['section_data']
                         }
                     
-                    print(data)
-                    overview = add_Course_overview(data =data)
-                    if not overview.is_valid():
-                        print(overview.errors)
-                        return Response({"status":overview.errors,"error":True})
+                    # print(data)
+                    # overview = add_Course_overview(data =data)
+                    # if not overview.is_valid():
+                    #     print(overview.errors)
+                    #     return Response({"status":overview.errors,"error":True})
                         
-                    overview.save()
+                    # overview.save()
+                    my_model_instance = Course_overview(category=request.data['overview'][1],
+                                                        title=request.data['overview'][0],
+                                                        level=request.data['overview'][2],
+                                                        duration=request.data['overview'][3],
+                                                        price=request.data['overview'][4],
+                                                        numberOfSections=request.data['overview'][6],
+                                                        sectionData=request.data['section_data'])
+                    my_model_instance.save()
 
                     return Response({"status":"Done",'error':False})
                 except Exception as AddcourseError:
