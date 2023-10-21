@@ -285,7 +285,8 @@ def admin(request):
 
 # API VIEWS TO HANDLE REQUESTS
 class Admin_access(APIView):
-      def post(self,request):
+    def post(self,request):
+          try:
             # saving Course data
             data = {'title':request.data['overview'][0],
                     'category':request.data['overview'][1],
@@ -295,25 +296,28 @@ class Admin_access(APIView):
                     'description':request.data['overview'][5],
                     'numberOfSections':request.data['overview'][6],
                     'sectionData':request.data['section_data']
-                  }
+                }
             
             print(data)
             overview = add_Course_overview(data =data)
             if not overview.is_valid():
-                  print(overview.errors)
-                  return Response({"status":overview.errors,"error":True})
+                print(overview.errors)
+                return Response({"status":overview.errors,"error":True})
                 
             overview.save()
 
             return Response({"status":"Done",'error':False})
+          except Exception as AddcourseError:
+                return Response({"status":AddcourseError,"error":True})
+
       
-      def get(self,request,mode):
-           
-            if mode=='view_courses':
-                  Course_overview_objs = Course_overview.objects.all()
-                  serializer = add_Course_overview(Course_overview_objs,many=True)
-                  return Response(serializer.data,status=200)
-            return Response({"payload":"Invalid request"},status=404)
+    def get(self,request,mode):
+        
+        if mode=='view_courses':
+                Course_overview_objs = Course_overview.objects.all()
+                serializer = add_Course_overview(Course_overview_objs,many=True)
+                return Response(serializer.data,status=200)
+        return Response({"payload":"Invalid request"},status=404)
 
 
 
