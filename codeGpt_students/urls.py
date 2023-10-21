@@ -25,5 +25,14 @@ urlpatterns = [
     path('Authlogin/',views.LoginAuth_token.as_view()),
     path('Email-check/recovery/',views.RecoverUser_Account.as_view()),
    
+    #admin pannel
+    path('practcode-admin-controls/', views.admin, name='admin'),
+    # API views urls
+    path('admin-access/add-course/',views.Admin_access.as_view()),
+    path('admin-access/fetch-all/<str:mode>',views.Admin_access.as_view()),    
+
+
+
+
 ]
 handler404 = 'codeGpt_students.views.error_page_not_found'

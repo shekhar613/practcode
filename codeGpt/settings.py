@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'codeGpt_students',
-    'practcode_admin',
     'corsheaders',
     'rest_framework.authtoken',
 ]

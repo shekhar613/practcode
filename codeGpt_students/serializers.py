@@ -34,3 +34,13 @@ class Createuser_Serializer(serializers.ModelSerializer):
 class Authuser_Serializer(serializers.ModelSerializer):
    pass
 
+
+
+# admin
+class add_Course_overview(serializers.ModelSerializer):
+    class Meta:
+        model = Course_overview
+        fields = '__all__'
+
+
+
