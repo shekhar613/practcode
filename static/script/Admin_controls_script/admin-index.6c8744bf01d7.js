@@ -75,7 +75,7 @@ $(document).on('click', '#upload_btn_id', function (e) {
     let overview = [$('#courseTile_id').val(),$('#Category_id').val(),$('#Level_id').val(),$('#Duration_id').val(),$('#Price_id').val(),$('#description_id').val(),sections_counter]
     dict['overview']= overview;
     dict['csrfmiddlewaretoken'] = $('input[name=csrfmiddlewaretoken]').val(),
-    dict['mode']='addCourse';
+    data['mode']='addCourse';
     
     // ;
     $.ajax({

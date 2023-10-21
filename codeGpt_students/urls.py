@@ -28,7 +28,7 @@ urlpatterns = [
     #admin pannel
     path('practcode-admin-controls/', views.admin, name='admin'),
     # API views urls
-    path('admin-access/add-course/',views.Admin_access.as_view()),
+    path('add-course/',views.Practcode_Courses.as_view()),
     path('admin-access/fetch-all/<str:mode>',views.Admin_access.as_view()),    
 
 

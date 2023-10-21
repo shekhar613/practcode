@@ -29,18 +29,9 @@ class Createuser_Serializer(serializers.ModelSerializer):
         return user
 
 
-# user Login and authentication
-
-class Authuser_Serializer(serializers.ModelSerializer):
-   pass
-
-
-
 # admin
 class add_Course_overview(serializers.ModelSerializer):
     class Meta:
         model = Course_overview
         fields = '__all__'
-
-
 
