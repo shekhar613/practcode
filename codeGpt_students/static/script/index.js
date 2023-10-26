@@ -34,11 +34,11 @@ $(document).ready(function() {
     });
   });
 
-setTimeout(function() {
-    document.getElementById('checkauth').click();
-    console.log("checking....");
-     // Simulate a button click after 5 seconds
-}, 999);
+// setTimeout(function() {
+//     document.getElementById('checkauth').click();
+//     console.log("checking....");
+//      // Simulate a button click after 5 seconds
+// }, 999);
 
 
 

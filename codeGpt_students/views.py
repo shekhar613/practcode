@@ -318,6 +318,7 @@ class Practcode_Courses(APIView):
 
                     return Response({"status":"Done",'error':False})
                 except Exception as AddcourseError:
+                        print(AddcourseError)
                         return Response({"status":AddcourseError,"error":True})
 
 class Admin_access(APIView):

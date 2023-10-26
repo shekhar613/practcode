@@ -37,7 +37,7 @@ class Course_overview(models.Model):
     title = models.CharField(max_length=200)
     level = models.CharField(max_length=50)
     duration = models.CharField(max_length=50)
-    ratings = models.CharField(max_length=10,default="No Rattings")
+    ratings = models.CharField(max_length=10,default="0")
     price = models.CharField(max_length=100,default="FREE")
     creator = models.CharField(max_length=20,default="Practcode")
     numberOfSections = models.IntegerField()

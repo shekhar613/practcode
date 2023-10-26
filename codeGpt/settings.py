@@ -136,7 +136,7 @@ SIMPLE_JWT = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'practcode',
+        'NAME': 'practcode_db',
         'USER': 'chandu',
         'PASSWORD': 'Pinklips@786',
         'HOST': 'localhost',  # The IP address of your MySQL server
