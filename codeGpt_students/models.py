@@ -16,7 +16,7 @@ class Student(models.Model):
 
 class Students_Status(models.Model):
     refresnce_student_id = models.IntegerField(null=False)
-    student_info = models.JSONField()
+    student_info = models.JSONField(default={"key": "value"})
     student_category = models.CharField(default="Basic",max_length=100)
 
 
@@ -48,6 +48,13 @@ class Course_overview(models.Model):
     sectionData = models.JSONField(default=dict)
     sections_descriptions = models.CharField(default="Practcode",max_length=200) 
 
+class quizes(models.Model):
+    language = models.CharField(max_length=20)
+    category = models.CharField(max_length=150)
+    level = models.CharField(max_length=100)
+    quiz_title = models.CharField(max_length=100)
+    quizes = models.JSONField()
+    
 
    
 
