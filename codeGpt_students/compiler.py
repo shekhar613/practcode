@@ -1,3 +1,4 @@
+
 from multiprocessing import process
 import os
 import hashlib
@@ -13,6 +14,8 @@ import json
 ALLOWED_LANGUAGES = set(['java', 'py', 'c', 'cpp'])
 
 # Define the temporary directory to store the compiled files
+# Get the directory of the current script
+
 TEMP_DIR = 'temp'
 
 def run_code(data):

@@ -18,18 +18,18 @@
             Practcode-admin / chandu
         </div>
         <div class="admin-nav-options">
-            <button class="opt">Add course</button>
-            <button class="opt">Update course</button>
-            <button class="opt">Add question</button>
-            <button class="opt">Add Quize</button>
-            <button class="opt">Add course</button>
+            <button class="opt" onclick="toggle_tabs(1,this)">Overview</button>
+            <button class="opt" onclick="toggle_tabs(2,this)">add Course</button>
+            <button class="opt" onclick="toggle_tabs(3,this)">Add question</button>
+            <button class="opt" onclick="toggle_tabs(4,this)">Add Quize</button>
+         
 
         </div>
 
     </nav>
     <br>
    
-    <div class="status-bar">Overview </div>
+    <div class="status-bar" id="status-barID">Overview </div>
     <br>
     <div class="container">
         <h2 class="Coursesectiondetails_h2">Live Courses</h2>
@@ -113,6 +113,64 @@
     
     
     </div>
+
+    <div class="container">
+        <h2 class="Coursesectiondetails_h2">Add Questions </h2>
+        <div class="input-sections">
+            <form>
+                {% csrf_token %}
+                <div class="input-div">
+                    <input id="language_id" type="text" placeholder="language">
+                </div>
+
+                <div class="input-div">
+                    <input id="category_id" type="text" placeholder="Category">
+                </div>
+
+                <div class="input-div">
+                    <input id="questionLevel_id" type="text" placeholder="Level ">
+                </div>
+
+                <div class="input-div">
+                    <input id="question_id"  type="text" placeholder="question">
+                </div>
+
+                <div class="input-div">
+                    <textarea id="testcases_id" cols="80" rows="10" type="text" placeholder="testcases"></textarea>
+                </div>
+
+                <div class="input-div">
+                    <textarea id="expected_id" cols="80" rows="10" type="text" placeholder="expected"></textarea>
+                </div>
+
+                <div class="input-div">
+                    <input id="example_id" type="text" placeholder="example">
+                </div>
+
+                <div class="input-div">
+                    <input id="exp_inputs_id" type="text" placeholder="example inputs">
+                </div>
+
+                <div class="input-div">
+                    <input id="exp_outputs_id" type="text" placeholder="example output">
+                </div>
+
+               
+                <div class="input-div">
+                    <label for="constraint">Question constraint</label>
+                  <textarea id="constraint_id" name="constraint" cols="80" rows="10" placeholder="write...." ></textarea>
+                </div>
+            <div class="addcourse_div_btngroup">
+                <button id="upload_Quetionbtn_id" class="upload_btn" ><i class="fa-solid fa-cloud-arrow-up"></i> Upload Question </button>
+            </div>
+
+                
+            </form>
+           
+        </div>
+    </div>
+
+
     <script src="{% static 'script/Admin_controls_script/admin-index.js' %}"></script>
     
 

@@ -11,7 +11,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 def index(request):
-    return render(request,"home.html")
+    return render(request,"useraccount/login.html")
+
+    # return render(request,"home.html")
 
 def userlogin(request):
     return render(request,"useraccount/login.html")
@@ -45,17 +47,13 @@ def test_compilerCode(request):
             print("-"*15)
             Questions_objs = Question.objects.get(id=json.loads(request.body)["questionId"])
             serializer = Questions_Serializer(Questions_objs)
-            print(serializer.data['testcases']['public'])
-            # with open("questions.json", "r") as jsonFile:
-            #     data = json.load(jsonFile)
             
-            # code_output = compiler.run_code(json.loads(request.body))
-            # print(json.loads(request.body))
-            # print(str(json.loads(request.body)["code"]))
+            print()
+            print(str(json.loads(request.body)["code"]))
             testCaseStatus = testcase.play({
                 'id': json.loads(request.body)["questionId"],
                 'question': str(json.loads(request.body)["code"]),
-                'test_cases':serializer.data['testcases']['public'], 'expected_outputs': serializer.data['expected']['public'],
+                'test_cases':json.loads(serializer.data['testcases'])['Public'], 'expected_outputs': json.loads(serializer.data['expected'])['Public'],
                 'language': json.loads(request.body)["language"]
                 })
             # testCaseStatus["testcase output"]=code_output
@@ -87,6 +85,8 @@ def services(request):
 def error_page_not_found(request,exception):
     return render(request,'404.html') 
 
+def quiz(request):
+    return render(request,'quiz/check_new_user.html')
 
 # django JWT
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -290,23 +290,7 @@ class Practcode_Courses(APIView):
             if request.data['mode']=='addCourse':
                 try:
                     # saving Course data
-                    data = {'title':request.data['overview'][0],
-                            'category':request.data['overview'][1],
-                            'level':request.data['overview'][2],
-                            'duration':request.data['overview'][3],
-                            'price':request.data['overview'][4],
-                            'description':request.data['overview'][5],
-                            'numberOfSections':request.data['overview'][6],
-                            'sectionData':request.data['section_data']
-                        }
-                    
-                    # print(data)
-                    # overview = add_Course_overview(data =data)
-                    # if not overview.is_valid():
-                    #     print(overview.errors)
-                    #     return Response({"status":overview.errors,"error":True})
-                        
-                    # overview.save()
+                   
                     my_model_instance = Course_overview(category=request.data['overview'][1],
                                                         title=request.data['overview'][0],
                                                         level=request.data['overview'][2],

@@ -1,0 +1,100 @@
+// ================ Multi-step css =================
+.wrapper{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f6e1ab 10px, #f2f2f2 60%, #f6e1ab);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.step {
+  width: 15rem;
+  height: 0.75rem;
+  display: inline-block;
+  &:not(:last-child){
+    margin-right: 3rem;
+  }
+  &.active {
+    background-color: $vividOrange!important;
+  }
+  &.finish {
+    background-color: $vividOrange!important;
+  }
+}
+// -------- Hidden Panel --------
+.multisteps_form_panel{
+  display: none;
+}
+.question_number{
+  padding-top: 5rem;
+}
+span{
+  color: $vividOrange;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  transition: $default_transition;
+}
+h1{
+  color: $btratos;
+  font-size: 4.204375rem;
+}
+.form_items{
+  li{
+    width: 100%;
+    color: $btratos;
+    font-size: 1.3125rem;
+    padding: 0.9375rem 3rem;
+    margin-top: 1.25rem;
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "";
+      width: 1.7rem;
+      height: 1.7rem;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      position: absolute;
+      border-radius: 100%;
+      border: 2px solid #e2e2e2;
+    }
+    &:before{
+      content: "\f111";
+      top: 48%;
+      left: 18px;
+      transform: translateY(-50%);
+      position: absolute;
+      color: $vividOrange;
+      font-size: 1.2rem;
+      font-weight: 900;
+      font-family: 'Font Awesome 5 Free';
+      display: none;
+    }
+    label{
+      cursor: pointer;
+    }
+    input{
+      display: none;
+    }
+    &.active{
+      &:before{
+        display: block;
+      }
+    }
+  }
+}
+.f_btn{
+  color: $btratos;
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding: 0.9375rem 1.5625rem;
+  outline: none;
+  background-color: $vividOrange;
+  margin-right: 0.625rem;
+  margin-bottom: 2rem;
+  transition: $default_transition;
+  &:hover{
+    color: $vividOrange;
+    background-color: $white;
+  }
+}

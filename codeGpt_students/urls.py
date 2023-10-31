@@ -11,6 +11,8 @@ urlpatterns = [
     path('login', views.userlogin, name='userlogin'),
     path('sign-up', views.createUser, name='createUser'),
     path('forgetpassword', views.forgetPassword, name='forgetpassword'),
+    path('quiz', views.quiz, name='quiz'),
+
     path('dashboard', views.userDashboard, name='userDashboard'),
     path('testcase', views.testingCompiler, name='testingCompiler'),
     path('codeoutput', views.test_compilerCode, name='test_compilerCode'),

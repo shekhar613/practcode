@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Practcode - Quick Overview </title>
+   <!-- FontAwesome-cdn include -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <!-- Google fonts include -->
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <!-- Bootstrap-css include -->
+   <link rel="stylesheet" href="{% static 'css/quiz_styles/bootstrap.min.css' %}">
+   <!-- Animate-css include -->
+   <link rel="stylesheet" href="{% static 'css/quiz_styles/animate.min.css' %}">
+   <!-- Main-StyleSheet include -->
+   <link rel="stylesheet" href="{% static 'css/quiz_styles/style.css' %}">
+</head>
+<body>
+   <div class="wrapper pt-5">
+      <div class="container-fluid">
+         <div class="row text-center">
+            <!-- Circles which indicates the steps of the form: -->
+            <div class="col step_progress d-flex d-none d-sm-block">
+               <span class="step bg-white rounded-pill active"></span>
+               <span class="step bg-white rounded-pill"></span>
+               <span class="step bg-white rounded-pill"></span>
+               <span class="step bg-white rounded-pill"></span>
+               <span class="step bg-white rounded-pill"></span>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <form class="multisteps_form position-relative" id="wizard">
+            <!------------------------- Step-1 ----------------------------->
+            <div class="multisteps_form_panel">
+               <!-- Form-content -->
+               <span class="question_number text-uppercase d-flex justify-content-center align-items-center">Question 1/5</span>
+               <h1 class="question_title text-center">What is Your Workplace?</h1>
+               <!-- Form-items -->
+               <div class="form_items d-flex justify-content-center">
+                  <ul class="ps-0">
+                     <li class="active step_1 rounded-pill bg-white text-start animate__animated animate__fadeInRight animate_50ms">
+                        <input type="radio" id="opt_1" name="stp_1_select_option" value="A place where people don’t question my authority">
+                        <label for="opt_1">A place where people don’t question my authority</label>
+                     </li>
+                     <li class="step_1 rounded-pill bg-white animate__animated animate__fadeInRight animate_100ms">
+                        <input type="radio" id="opt_2" name="stp_1_select_option" value="Where ever my best friends are, that’s where i want to be">
+                        <label for="opt_2">Where ever my best friends are, that’s where i want to be</label>
+                     </li>
+                     <li class="step_1 rounded-pill bg-white animate__animated animate__fadeInRight animate_150ms">
+                        <input type="radio" id="opt_3" name="stp_1_select_option" value="One that’s organized, structured and has workplace policies set.">
+                        <label for="opt_3">One that’s organized, structured and has workplace policies set.</label>
+                     </li>
+                     <li class="step_1 rounded-pill bg-white animate__animated animate__fadeInRight animate_200ms">
+                        <input type="radio" id="opt_4" name="stp_1_select_option" value="A place where everyone knows I’m the boss.">
+                        <label for="opt_4">A place where everyone knows I’m the boss.</label>
+                     </li>
+                     <li class="step_1 rounded-pill bg-white animate__animated animate__fadeInRight animate_250ms">
+                        <input type="radio" id="opt_5" name="stp_1_select_option" value="A place where I’m the CEO">
+                        <label for="opt_5">A place where I’m the CEO</label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!------------------------- Step-2 ----------------------------->
+            <div class="multisteps_form_panel">
+               <!-- Form-content -->
+               <span class="question_number text-uppercase d-flex justify-content-center align-items-center">Question 2/5</span>
+               <h1 class="question_title text-center">The main producers of free gas are?</h1>
+               <!-- Form-items -->
+               <div class="form_items d-flex justify-content-center">
+                  <ul class="ps-0">
+                     <li class="active step_2 rounded-pill bg-white animate__animated animate__fadeInRight animate_50ms">
+                        <input type="radio" id="opt_6" name="stp_2_select_option" value="the south Bassein and Tapti fields in the western offshore">
+                        <label for="opt_6">the south Bassein and Tapti fields in the western offshore</label>
+                     </li>
+                     <li class="step_2 rounded-pill bg-white animate__animated animate__fadeInRight animate_100ms">
+                        <input type="radio" id="opt_7" name="stp_2_select_option" value="the gas fields in Tripura and Andhra Pradesh (KG Basin)">
+                        <label for="opt_7">the gas fields in Tripura and Andhra Pradesh (KG Basin)</label>
+                     </li>
+                     <li class="step_2 rounded-pill bg-white animate__animated animate__fadeInRight animate_150ms">
+                        <input type="radio" id="opt_8" name="stp_2_select_option" value="both (a) and (b)">
+                        <label for="opt_8">both (a) and (b)</label>
+                     </li>
+                     <li class="step_2 rounded-pill bg-white animate__animated animate__fadeInRight animate_200ms">
+                        <input type="radio" id="opt_9" name="stp_2_select_option" value="Iran, Iraq, Saudi Arabia, Kuwait">
+                        <label for="opt_9">Iran, Iraq, Saudi Arabia, Kuwait</label>
+                     </li>
+                     <li class="step_2 rounded-pill bg-white animate__animated animate__fadeInRight animate_250ms">
+                        <input type="radio" id="opt_10" name="stp_2_select_option" value="None of the above">
+                        <label for="opt_10">None of the above</label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!------------------------- Step-3 ----------------------------->
+            <div class="multisteps_form_panel">
+               <!-- Form-content -->
+               <span class="question_number text-uppercase d-flex justify-content-center align-items-center">Question 3/5</span>
+               <h1 class="question_title text-center">The moon?</h1>
+               <!-- Form-items -->
+               <div class="form_items d-flex justify-content-center">
+                  <ul class="ps-0">
+                     <li class="active step_3 rounded-pill bg-white animate__animated animate__fadeInRight animate_50ms">
+                        <input type="radio" id="opt_11" name="stp_3_select_option" value="is the natural satellite of earth">
+                        <label for="opt_11">is the natural satellite of earth</label>
+                     </li>
+                     <li class="step_3 rounded-pill bg-white animate__animated animate__fadeInRight animate_100ms">
+                        <input type="radio" id="opt_12" name="stp_3_select_option" value="has no liquid water">
+                        <label for="opt_12">has no liquid water</label>
+                     </li>
+                     <li class="step_3 rounded-pill bg-white animate__animated animate__fadeInRight animate_150ms">
+                        <input type="radio" id="opt_13" name="stp_3_select_option" value="both (a) and (b)">
+                        <label for="opt_13">both (a) and (b)</label>
+                     </li>
+                     <li class="step_3 rounded-pill bg-white animate__animated animate__fadeInRight animate_200ms">
+                        <input type="radio" id="opt_14" name="stp_3_select_option" value="has no atmosphere">
+                        <label for="opt_14">has no atmosphere</label>
+                     </li>
+                     <li class="step_3 rounded-pill bg-white animate__animated animate__fadeInRight animate_250ms">
+                        <input type="radio" id="opt_15" name="stp_3_select_option" value="All of the above">
+                        <label for="opt_15">All of the above</label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!------------------------- Step-4 ----------------------------->
+            <div class="multisteps_form_panel">
+               <!-- Form-content -->
+               <span class="question_number text-uppercase d-flex justify-content-center align-items-center">Question 4/5</span>
+               <h1 class="question_title text-center">The main crops of kharif are?</h1>
+               <!-- Form-items -->
+               <div class="form_items d-flex justify-content-center">
+                  <ul class="ps-0">
+                     <li class="active step_4 rounded-pill bg-white animate__animated animate__fadeInRight animate_50ms">
+                        <input type="radio" id="opt_16" name="stp_4_select_option" value="rice, jowar, bajra">
+                        <label for="opt_16">rice, jowar, bajra</label>
+                     </li>
+                     <li class="step_4 rounded-pill bg-white animate__animated animate__fadeInRight animate_100ms">
+                        <input type="radio" id="opt_17" name="stp_4_select_option" value="ragi, maize">
+                        <label for="opt_17">ragi, maize</label>
+                     </li>
+                     <li class="step_4 rounded-pill bg-white animate__animated animate__fadeInRight animate_150ms">
+                        <input type="radio" id="opt_18" name="stp_4_select_option" value="both (a) and (b)">
+                        <label for="opt_18">both (a) and (b)</label>
+                     </li>
+                     <li class="step_4 rounded-pill bg-white animate__animated animate__fadeInRight animate_200ms">
+                        <input type="radio" id="opt_19" name="stp_4_select_option" value="cotton, jute">
+                        <label for="opt_19">cotton, jute</label>
+                     </li>
+                     <li class="step_4 rounded-pill bg-white animate__animated animate__fadeInRight animate_250ms">
+                        <input type="radio" id="opt_20" name="stp_4_select_option" value="All of the above">
+                        <label for="opt_20">All of the above</label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!------------------------- Step-5 ----------------------------->
+            <div class="multisteps_form_panel">
+               <!-- Form-content -->
+               <span class="question_number text-uppercase d-flex justify-content-center align-items-center">Question 5/5</span>
+               <h1 class="question_title text-center">The Penumbra is?</h1>
+               <!-- Form-items -->
+               <div class="form_items d-flex justify-content-center">
+                  <ul class="ps-0">
+                     <li class="active step_5 rounded-pill bg-white animate__animated animate__fadeInRight animate_50ms">
+                        <input type="radio" id="opt_21" name="stp_5_select_option" value="the outer portion of the moon's shadow">
+                        <label for="opt_21">the outer portion of the moon's shadow</label>
+                     </li>
+                     <li class="step_5 rounded-pill bg-white animate__animated animate__fadeInRight animate_100ms">
+                        <input type="radio" id="opt_22" name="stp_5_select_option" value="formed by the tangent that intersects between the sun and the moon">
+                        <label for="opt_22">formed by the tangent that intersects between the sun and the moon</label>
+                     </li>
+                     <li class="step_5 rounded-pill bg-white animate__animated animate__fadeInRight animate_150ms">
+                        <input type="radio" id="opt_23" name="stp_5_select_option" value="both (a) and (b)">
+                        <label for="opt_23">both (a) and (b)</label>
+                     </li>
+                     <li class="step_5 rounded-pill bg-white animate__animated animate__fadeInRight animate_200ms">
+                        <input type="radio" id="opt_24" name="stp_5_select_option" value="None of the above">
+                        <label for="opt_24">None of the above</label>
+                     </li>
+                     <li class="step_5 rounded-pill bg-white animate__animated animate__fadeInRight animate_250ms">
+                        <input type="radio" id="opt_25" name="stp_5_select_option" value="All of the above">
+                        <label for="opt_25">All of the above</label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!---------- Form Button ---------->
+            <div class="form_btn text-center ms-5 mt-5">
+               <button type="button" class="f_btn text-uppercase rounded-pill border-0" id="prevBtn" onclick="nextPrev(-1)">Last Question</button>
+               <button type="button" class="f_btn text-uppercase rounded-pill border-0" id="nextBtn" onclick="nextPrev(1)">Next Question</button>
+            </div>
+         </form>
+      </div>
+   </div>
+   <!-- jQuery-js include -->
+   <script src="{% static 'script/quiz_script/jquery-3.6.0.min.js' %}"></script>
+   <!-- Bootstrap-js include -->
+   <script src="{% static 'script/quiz_script/bootstrap.min.js' %}"></script>
+   <!-- jQuery-validate-js include -->
+   <script src="{% static 'script/quiz_script/jquery.validate.min.js' %}"></script>
+   <!-- Custom-js include -->
+   <script src="{% static 'script/quiz_script/script.js' %}"></script>
+</body>
+</html>

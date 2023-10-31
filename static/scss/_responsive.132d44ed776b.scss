@@ -1,0 +1,151 @@
+/* ==================================================
+*   01 - media screen and (max-width: 1500px)
+*   02 - media screen and (max-width: 1400px)
+*	03 - media screen and (max-width: 1200px)
+*	04 - media screen and (max-width: 992px)
+*	05 - media screen and (max-width: 768px)
+*	06 - media screen and (max-width: 576px)
+*	07 - media screen and (max-width: 380px)
+*   XX-Large devices (larger desktops)
+*   No media query since the xxl breakpoint has no upper bound on its width
+================================================== */
+// media screen and (max-width: 1620px)
+@media screen and(max-width: 1499.98px) {
+    .step_progress{
+        .step{
+            width: 12rem;
+            &:not(:last-child){
+                margin-right: 2.8rem;
+            }
+        }
+    }
+}
+// media screen and (max-width: 1400px)
+@media screen and(max-width: 1399.98px) {
+    .step_progress{
+        .step{
+            width: 12rem;
+            &:not(:last-child){
+                margin-right: 2.8rem;
+            }
+        }
+    }
+    span{
+        font-size: 1.20rem;
+        padding-bottom: 0.8rem;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    .form_items{
+        li{
+            font-size: 1.2rem;
+            padding: 0.8375rem 3rem;
+        }
+    }
+    .f_btn{
+        font-size: 1.18rem;
+        font-weight: 700;
+        padding: 0.7375rem 1.3625rem;
+    }
+}
+
+// media screen and (max-width: 1200px)
+@media screen and(max-width: 1199.98px) {
+    .step_progress{
+        .step{
+            width: 10rem;
+            &:not(:last-child){
+                margin-right: 2.6rem;
+            }
+        }
+    }
+    span{
+        font-size: 1.15rem;
+        padding-bottom: 0.6rem;
+    }
+    h1{
+        font-size: 3.5rem;
+    }
+    .form_items{
+        li{
+            font-size: 1rem;
+            padding: 0.7375rem 3rem;
+        }
+    }
+    .f_btn{
+        font-size: 1.15rem;
+        font-weight: 700;
+        padding: 0.8375rem 1.4625rem;
+    }
+}
+// media screen and (max-width: 991px)
+@media screen and(max-width: 991px) {
+    .step_progress{
+        .step{
+            width: 6.5rem;
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+        }
+    }
+    span{
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 3.5rem;
+        font-weight: 600;
+    }
+    .form_items{
+        li{
+            font-size: 1rem;
+        }
+    }
+    .f_btn{
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.7375rem 1.3625rem;
+    }
+}
+// media screen and (max-width: 767px)
+@media screen and(max-width: 767px) {
+    .step_progress{
+        .step{
+            width: 5rem;
+            &:not(:last-child){
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    span{
+        font-size: .8rem;
+    }
+    h1{
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .form_items{
+        li{
+            font-size: 0.8rem;
+        }
+    }
+    .f_btn{
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.5375rem 1.1625rem;
+    }
+}
+// media screen and (max-width: 575px)
+@media screen and(max-width: 575px) {
+    span{
+        font-size: .8rem;
+    }
+    h1{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .f_btn{
+        font-size: 0.6rem;
+        padding: 0.5375rem 1.1625rem;
+    }
+}

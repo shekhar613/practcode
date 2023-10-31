@@ -16,6 +16,8 @@ class Student(models.Model):
 
 class Students_Status(models.Model):
     refresnce_student_id = models.IntegerField(null=False)
+    student_info = models.JSONField()
+    student_category = models.CharField(default="Basic",max_length=100)
 
 
 
