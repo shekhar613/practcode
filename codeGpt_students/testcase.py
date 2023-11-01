@@ -34,9 +34,9 @@ print(i + j)
 
         # Decode and print the output
         output_str = output.decode().strip()
-        print(f'Output: {output_str} error : {error}')
+        return (f'Output: {output_str} error : {error}')
     except Exception as DbugError:
-        print(f"runBug Error : {DbugError}")
+        return (f"runBug Error : {DbugError}")
 
 def clean_up():
     folder_path = TEMP_DIR

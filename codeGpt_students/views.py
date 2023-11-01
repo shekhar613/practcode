@@ -52,7 +52,7 @@ def test_compilerCode(request):
                 
                 print()
                 print(str(json.loads(request.body)["code"]))
-                testcase.runBug()
+                
                 # testCaseStatus = testcase.play({
                 #     'id': json.loads(request.body)["questionId"],
                 #     'question': str(json.loads(request.body)["code"]),
@@ -62,7 +62,7 @@ def test_compilerCode(request):
                 # testCaseStatus["testcase output"]=code_output
                 
                 # print(f"Final ouput \n {testCaseStatus} \n")
-                return JsonResponse({"debugging in processs....":True})
+                return JsonResponse({"debugging in processs....":testcase.runBug()})
                 # return JsonResponse(testCaseStatus)
             # For Submit the user code and retrun private testcases result
             else:
