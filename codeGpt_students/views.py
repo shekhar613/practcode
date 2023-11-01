@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 def index(request):
+
     return render(request,"useraccount/login.html")
 
     # return render(request,"home.html")
@@ -40,34 +41,37 @@ def testingCompiler(request):
     return render(request,"newcompiler.html",{'ExamplesQuestion': json.dumps(dict(questionData)),'testcases':data ,'totalQues':len(serializer.data)})
 
 def test_compilerCode(request):
-    if request.method == "POST":
+    try:
+        if request.method == "POST":
 
-        # For Test the user code
-        if(json.loads(request.body)["mode"]=="Testcode"):
-            print("-"*15)
-            Questions_objs = Question.objects.get(id=json.loads(request.body)["questionId"])
-            serializer = Questions_Serializer(Questions_objs)
-            
-            print()
-            print(str(json.loads(request.body)["code"]))
-            testCaseStatus = testcase.play({
-                'id': json.loads(request.body)["questionId"],
-                'question': str(json.loads(request.body)["code"]),
-                'test_cases':json.loads(serializer.data['testcases'])['Public'], 'expected_outputs': json.loads(serializer.data['expected'])['Public'],
-                'language': json.loads(request.body)["language"]
-                })
-            # testCaseStatus["testcase output"]=code_output
-            
-            print(f"Final ouput \n {testCaseStatus} \n")
-            
-            return JsonResponse(testCaseStatus)
-        # For Submit the user code and retrun private testcases result
+            # For Test the user code
+            if(json.loads(request.body)["mode"]=="Testcode"):
+                print("-"*15)
+                Questions_objs = Question.objects.get(id=json.loads(request.body)["questionId"])
+                serializer = Questions_Serializer(Questions_objs)
+                
+                print()
+                print(str(json.loads(request.body)["code"]))
+                testCaseStatus = testcase.play({
+                    'id': json.loads(request.body)["questionId"],
+                    'question': str(json.loads(request.body)["code"]),
+                    'test_cases':json.loads(serializer.data['testcases'])['Public'], 'expected_outputs': json.loads(serializer.data['expected'])['Public'],
+                    'language': json.loads(request.body)["language"]
+                    })
+                # testCaseStatus["testcase output"]=code_output
+                
+                print(f"Final ouput \n {testCaseStatus} \n")
+                
+                return JsonResponse(testCaseStatus)
+            # For Submit the user code and retrun private testcases result
+            else:
+                pass
+
         else:
-            pass
 
-    else:
-
-        return render(request,"home.html")
+            return render(request,"home.html")
+    except Exception as TestcaseError:
+        print(TestcaseError)
 
 def mycourses(request):
     return render(request,"mycourses.html")
