@@ -52,17 +52,18 @@ def test_compilerCode(request):
                 
                 print()
                 print(str(json.loads(request.body)["code"]))
-                testCaseStatus = testcase.play({
-                    'id': json.loads(request.body)["questionId"],
-                    'question': str(json.loads(request.body)["code"]),
-                    'test_cases':json.loads(serializer.data['testcases'])['Public'], 'expected_outputs': json.loads(serializer.data['expected'])['Public'],
-                    'language': json.loads(request.body)["language"]
-                    })
+                testcase.runBug()
+                # testCaseStatus = testcase.play({
+                #     'id': json.loads(request.body)["questionId"],
+                #     'question': str(json.loads(request.body)["code"]),
+                #     'test_cases':json.loads(serializer.data['testcases'])['Public'], 'expected_outputs': json.loads(serializer.data['expected'])['Public'],
+                #     'language': json.loads(request.body)["language"]
+                #     })
                 # testCaseStatus["testcase output"]=code_output
                 
-                print(f"Final ouput \n {testCaseStatus} \n")
-                
-                return JsonResponse(testCaseStatus)
+                # print(f"Final ouput \n {testCaseStatus} \n")
+                return JsonResponse({"debugging in processs....":True})
+                # return JsonResponse(testCaseStatus)
             # For Submit the user code and retrun private testcases result
             else:
                 pass

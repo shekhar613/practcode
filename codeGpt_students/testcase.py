@@ -13,7 +13,30 @@ TEMP_DIR = os.path.join(script_directory, 'temp')
 
 
 
+def runBug():
+    try:
+        code = """\
+i = int(input())
+j = int(input())
+print(i + j)
+        """
 
+        # Input values
+        i = 5
+        j = 7
+
+        # Create a subprocess
+        proc = subprocess.Popen(['python', '-c', code], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        # Send input data to the subprocess
+        input_data = f"{i}\n{j}\n"
+        output, error = proc.communicate(input=input_data.encode())
+
+        # Decode and print the output
+        output_str = output.decode().strip()
+        print(f'Output: {output_str} error : {error}')
+    except Exception as DbugError:
+        print(f"runBug Error : {DbugError}")
 
 def clean_up():
     folder_path = TEMP_DIR
