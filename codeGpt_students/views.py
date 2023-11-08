@@ -12,9 +12,9 @@ from django.contrib.auth.models import User
 
 def index(request):
 
-    return render(request,"useraccount/login.html")
+    # return render(request,"useraccount/login.html")
 
-    # return render(request,"home.html")
+    return render(request,"index.html")
 
 def userlogin(request):
     return render(request,"useraccount/login.html")
@@ -88,6 +88,7 @@ def error_page_not_found(request,exception):
     return render(request,'404.html') 
 
 def quiz(request):
+    
     return render(request,'quiz/check_new_user.html')
 
 # django JWT

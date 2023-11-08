@@ -27,27 +27,27 @@ def clean_up():
 
 def play(question):
     try:
-        # if question['language'] in ['py','python','Python']:
-        #     print(question)
-        #     testStatus = {question["id"]:{}}
-        #     # iterate over the test cases and expected outputs
-        #     for i, (test_case, expected_output) in enumerate(zip(question['test_cases'], question['expected_outputs'])):
-        #         print(i,test_case,expected_output)
-        #         # run the test case
-        #         proc = subprocess.Popen(['python', '-c', question['question']], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #         # test_data = f"{1}\n{3}\n"
-        #         output, error = proc.communicate(input=test_case.encode())
-        #         output_str = output.decode().strip()
-        #         print(f'output = = {output.decode()}')
-        #         if len(error)==0:
-        #             testStatus[question["id"]].update({i:{"status":True,"output":output_str,"expected":expected_output,"TestCaseInputs":test_case.split('\n')}})
-        #         # check the output against the expected output
-        #         try:
-        #             assert output_str == expected_output, f"Question {question['id']}, test case {i+1}: Output '{output_str}' does not match expected output '{expected_output}'"
+        if question['language'] in ['py','python','Python']:
+            print(question)
+            testStatus = {question["id"]:{}}
+            # iterate over the test cases and expected outputs
+            for i, (test_case, expected_output) in enumerate(zip(question['test_cases'], question['expected_outputs'])):
+                print(i,test_case,expected_output)
+                # run the test case
+                proc = subprocess.Popen(['python', '-c', question['question']], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                # test_data = f"{1}\n{3}\n"
+                output, error = proc.communicate(input=test_case.encode())
+                output_str = output.decode().strip()
+                print(f'output = = {output.decode()}')
+                if len(error)==0:
+                    testStatus[question["id"]].update({i:{"status":True,"output":output_str,"expected":expected_output,"TestCaseInputs":test_case.split('\n')}})
+                # check the output against the expected output
+                try:
+                    assert output_str == expected_output, f"Question {question['id']}, test case {i+1}: Output '{output_str}' does not match expected output '{expected_output}'"
                 
-        #         except Exception as e:
-        #             # print(e)
-        #             testStatus[question["id"]].update({i:{"status":False,"output":output_str,"expected":expected_output,"TestCaseInputs":test_case.split('\n'),"msg":f"{output_str} not match with Expected output {expected_output} !"}})
+                except Exception as e:
+                    # print(e)
+                    testStatus[question["id"]].update({i:{"status":False,"output":output_str,"expected":expected_output,"TestCaseInputs":test_case.split('\n'),"msg":f"{output_str} not match with Expected output {expected_output} !"}})
         if question['language'] in ['C','c']:
             # c language code\
             # Generate a unique filename based on a random hash

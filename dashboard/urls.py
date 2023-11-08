@@ -5,4 +5,6 @@ urlpatterns = [
     # API ENDPOINTS
     
     path('addQuestion/<str:id>/',views.addQuestions.as_view()),
+    path('quiz/<str:mode>/',views.quizes.as_view())
+    
 ]

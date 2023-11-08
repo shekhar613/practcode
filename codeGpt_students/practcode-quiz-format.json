@@ -1,0 +1,75 @@
+{
+    "id": 1,
+    "language": "C",
+    "category": "Programming",
+    "level": "Basic",
+    "quize_title": "Practcode General Test",
+    "quizes": {
+        "1": {
+            "question": [
+                " What will be the output of the C program?",
+                "\n#include <stdio.h>\nint main(){\n\tint a = 130;\n\tchar *ptr;\n\tptr = (char *)&a;\n\tprintf('%d ',*ptr);\n\treturn 0;\n}"
+            ],
+            "options": [
+                "-126",
+                "Run Time Error",
+                "Garbage value",
+                "Compile Time Error"
+            ],
+            "answer": "-126"
+        },
+
+        "2": {
+            "question": [
+                "What will be the output of the C program?",
+                "\n#include<stdio.h>\n int main(){\n\t int i = 3;\n\t int *j;\n\t int **k;\n\t j = &i;\n\t k = &j;\n\t k++;\n\t printf('%d',**k);\n\t return 0;\n } "
+            ],
+            "options": [
+                "Garbage value",
+                "Compilation Error ",
+                "Run time error",
+                "Linker Error"
+            ],
+            "answer": "Run time error"
+        },
+        "3": {
+            "question": [
+                "Which one of the following is incorrect?",
+                ""
+            ],
+            "options": [
+                "enum fruits = { apple, banana }f;",
+                "enum fruits{ apple, banana }f ;",
+                "enum fruits{ apple, banana };",
+                "enum f{ apple, banana };"
+            ],
+            "answer": "enum fruits = { apple, banana }f;"
+        }
+        ,"4": {
+            "question": [
+                "Which of the following data type is right in C programming?",
+                ""
+            ],
+            "options": [
+                "long long double",
+                "unsigned long long int",
+                "long double int",
+                "unsigned long double"
+            ],
+            "answer": "unsigned long double"
+        },
+        "5": {
+            "question": [
+                "What will be the output of the C program?",
+                "\n#include &lt;stdio.h&gt;\n#include&lt;string.h&gt;\nint main(){\n\t char *ptr = 'hello';\n\t char a[22];\n\t *ptr = 'world';\n\t printf('%s %s',ptr, a);\n\t return 0;\n }"
+            ],
+            "options": [
+                "Garbage value",
+                "Compilation Error ",
+                "Run time error",
+                "Linker Error"
+            ],
+            "answer": "Run time error"
+        }
+    }
+}

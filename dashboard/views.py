@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from codeGpt_students.models import *
 from rest_framework.response import Response
-
+import json
 # API ENDPOINTS
 
 
@@ -30,3 +30,27 @@ class addQuestions(APIView):
                     return Response({"status":AddcourseError,"error":True})
               
           return Response({'data':request.data})
+    
+class quizes(APIView):
+     def get(self,request,mode):
+          if mode=='getquizes':
+               with open('codeGpt_students/practcode-quiz-format.json','r') as quizes:
+                    file_contents = json.loads(quizes.read())
+               data = {}
+               for quez in file_contents['quizes']:
+                    data[quez]=[file_contents['quizes'][quez]['question'],file_contents['quizes'][quez]['options']]
+               
+               print(data)
+               return Response({"quizes":data}  )
+          
+     def post(self,request,mode):
+          if mode=='checktest':
+               with open('codeGpt_students/practcode-quiz-format.json','r') as quizes:
+                    file_contents = json.loads(quizes.read())
+               percent = 0
+               for quez in file_contents['quizes']:
+                    if request.data[quez] == file_contents['quizes'][quez]['answer']:
+                         percent+=1
+               print(request.data)
+               percent = (percent/5)*100
+               return Response({"percent":percent}  )
