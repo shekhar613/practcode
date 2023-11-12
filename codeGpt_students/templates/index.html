@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ● Practcode {% block title %}{% endblock %}</title>
+    <title>Practcode {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/PractCodePageLoader.css' %}">
     <link rel="stylesheet" href="{% static 'css/practcode-theams/index-theams.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/lo.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/215c5cf425.js" crossorigin="anonymous"></script>
@@ -25,8 +25,8 @@
         <button onclick="PractcodetoggleSidenav()" class="PractcodeNavsidebartoggleBtn"><i
                 class="fa-solid fa-bars"></i></button>
         <div class="PractcodeNav_heading_logo" style="display: flex;"> <img alt="Practcode"
-                src="{% static 'img/lo.png' %}" style="width: 50px; height: 40px;"></img>
-            <h3 style="padding-top: 10px;">PRACTCODE</h3>
+                src="{% static 'img/favicon.png' %}" style="width: 80px; height: 60px;"></img>
+            <h3 style="padding-top: 20px;">PRACTCODE</h3>
         </div>
         <div class="navtaboptions practcode-theamer">
             <button ><a class="home" href="/">Home</a></button>
@@ -61,17 +61,31 @@
     </div>
     <div class="PractcodeNavSideBody">
         <div id="PractcodeSideNavid" class="PractcodeSide_nav">
-            <div class="PractcodeSideNavDetails" id="PractcodeSideNavDetailsId">
-                <i class="fa-solid fa-list PractcodeSideNavDetailsIcon"></i>
-                <p class="PractcodeSideNavDetailsText">Contains</p>
-            </div>
+           
 
-            <!-- contains when user is not loged in -->
-            <div id="PractcodeSidebar_userstatusid" class="PractcodeSidebar_userstatus">
-                <h3>Practcode</h3>
-                <a href="/login"><button>Log in</button></a>
-                <h5>Or</h5>
-                <a href="/sign-up"><button>Sign up</button></a>
+           
+            <div id="PractcodeSidebar_userOptionsid" class="PractcodeSidebar_userOptions">
+                <br>
+                <br>
+                <ul class="userOptions_section_sidenav">
+                    <p>Application</p>
+                    <li class="side-navigation-options"><a href="/"><i class="fa-regular fa-address-card"></i>Student</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-graduation-cap"></i>Instructor</a></li>
+                </ul>
+
+                <ul class="userOptions_section_sidenav">
+                    <p>Student</p>
+                    <li class="side-navigation-options"><a href="/course-details"><i class="fa-solid fa-magnifying-glass"></i>Browse Courses</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-book-open"></i>View Course</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-book-bookmark"></i>Take Course</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-laptop-file"></i>Take a Quiz</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-square-poll-vertical"></i>Quize Results</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-graduation-cap"></i>My Courses</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-comments"></i>community</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-headset"></i>Get Help</a></li>
+                    <li class="side-navigation-options"><a href=""><i class="fa-solid fa-lock"></i>Logout</a></li>
+                </ul>
+                
             </div>
 
 
@@ -86,46 +100,7 @@
         </div>
 
     </div>
-    <footer>
-        <div class="footerInfo">
-
-            <div class="footerdiv1">
-                <div class="footerdiv1-peactcode">
-                    <img src="{% static 'img/lo.png' %}" alt="Practcode ,The Best Online Courses Of All Time">
-                    <h3>Practcode</h3>
-                </div>
-                <p>Learn from industry experts, gain hands-on experience through interactive Practices, and join a
-                    thriving learner community.
-
-                    With flexible schedules and up-to-date content, PractCode is your platform to master programming.
-                </p>
-                <div class="footerdiv1-social-icons">
-                    <a href=""><button><i class="fa-brands fa-square-instagram"></i></button></a>
-                    <a href=""><button><i class="fa-brands fa-facebook"></i></button></a>
-                    <a href=""><button><i class="fa-brands fa-square-twitter"></i></button></a>
-                </div>
-            </div>
-
-            <div class="footerdiv2">
-                <h3>Latest Blog Posts</h3>
-                <div class="footerdiv2-latestposts">
-                    <img src="{% static 'img/lo.png' %}" alt="Practcode Latest posts">
-                    <p>Data Analyst Resume:A Compete Guid <br>17 August 2023 </p>
-                </div>
-                <div class="footerdiv2-latestposts">
-                    <img src="{% static 'img/lo.png' %}" alt="Practcode Latest posts">
-                    <p>Data Analyst Resume:A Compete Guid <br>17 August 2023 </p>
-                </div>
-            </div>
-
-         
-        </div>
-        <div class="footercopyright">
-            <p>Copyright © 2023 Practcode</p>
-        </div>
-
-    </footer>
-
+    
     <script>
         var loader = document.getElementById("preloader")
         window.addEventListener('load', function () {

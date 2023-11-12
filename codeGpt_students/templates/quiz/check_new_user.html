@@ -1,4 +1,4 @@
-{% extends "index.html" %} {% block title %} - Home{% endblock %}
+{% extends "index.html" %} {% block title %} - Quiz{% endblock %}
 {% block headcontain %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/quiz_styles/quizes_style.css' %}" />
@@ -12,7 +12,7 @@
     <br>
     <h5 class="page_tag_heading">Home / Practcode Test</h5>
     <br>
-    <div id="question_area_id" class="question_area" >
+    <div id="question_area_id" class="question_area">
       <div class="question">
         <h3 id="quiz_question_ID"></h3>
       </div>
@@ -32,8 +32,10 @@
     </div>
     <!-- result -->
     <div id="result_area_id" class="container" style="display: none;">
-      <div class="circular-progress">
-        <div class="value-container">0%</div>
+      <div class="circular-progress_mainDiv">
+        <div class="circular-progress">
+          <div class="value-container">0%</div>
+        </div>
       </div>
       <div class="resut_text">
         <h2>Practcode score Analysis</h2>

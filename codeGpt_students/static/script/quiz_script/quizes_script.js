@@ -114,22 +114,21 @@ function submitQuiz(){
         }
     }
 }
-
 const showResult=(progressEndValue)=>{
     // result
     let progressBar = document.querySelector(".circular-progress");
     let valueContainer = document.querySelector(".value-container");
-
+    // default color #4d5bf9
     let progressValue = 0;
-
+    let color = '#4d5bf9'
     let speed = 10;
 
     let progress = setInterval(() => {
     progressValue++;
     valueContainer.textContent = `${progressValue}%`;
     progressBar.style.background = `conic-gradient(
-        #4d5bf9 ${progressValue * 3.6}deg,
-        #cadcff ${progressValue * 3.6}deg
+        ${color} ${progressValue * 3.6}deg,
+        #cadcff ${progressValue * 3.6}deg    
     )`;
     if (progressValue == progressEndValue) {
         clearInterval(progress);
@@ -138,3 +137,4 @@ const showResult=(progressEndValue)=>{
     document.getElementById('result_text').innerText=`You score ${progressEndValue} % `
 
 }
+showResult(88);

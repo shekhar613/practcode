@@ -94,12 +94,12 @@
     width: 0%;
     min-height: 100vh;
     max-height: max-content;
-    background: #05263b;
+    background: #39444d;
     /* background: #084c76; */
     z-index: 9999;
 }
 .PractcodeSide_nav.activeSidenav{
-    width: 25%;
+    width: 18%;
     
 }
 .MycoursesBody{
@@ -108,7 +108,7 @@
     
 }
 .PractcodeSide_nav.activeSidenav{
-    width: 25%;
+    width: 20%;
 }
 /* courses topics display */
 .PractcodeSideNavDetails{
@@ -124,42 +124,52 @@
 }
 
 
-/* PractcodeSidebar_userstatus style */
-.PractcodeSidebar_userstatus{
-    position: relative;
+/* PractcodeSidebar_userOptions style */
+.PractcodeSidebar_userOptions{
+    /* position: relative; */
     transition: all 0.50s;
-    top: 100px;
+    /* top: 100px; */
     width: 0%;
-    margin: auto;
-    text-align: center;
-    padding: 20px;
+    /* margin: auto; */
+    /* text-align: center; */
+    /* padding: 20px; */
     color: #bbbbbb;
     display: none;
 }
-.PractcodeSidebar_userstatus.activeuser{
-    width: 90%;
+.PractcodeSidebar_userOptions.activeuser{
+    width: 100%;
     display: block;
 }
-.PractcodeSidebar_userstatus h3{
-    font-size: 20px;
-    color: #bbbbbb;
-    padding: 14px;
-    letter-spacing: 2px;
-    
+.PractcodeSidebar_userOptions .userOptions_section_sidenav{
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    padding: 18px;
+    letter-spacing: 2px;    
 
 }
-.PractcodeSidebar_userstatus button{
-    width: 80%;
-    background:#2196f3;
-    color: #ffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 400;
-    margin: 15px;
-    cursor: pointer; 
-} 
+.userOptions_section_sidenav li{
+    padding: 14px;
+    padding-left: 15px;
+    list-style: none;
+    font-weight: 200;
+    cursor: pointer;
+    
+}
+.userOptions_section_sidenav .active-option{
+    background: #2f383f;
+}
+.userOptions_section_sidenav .active-option i{
+    color: #2196f3;
+}
+.userOptions_section_sidenav li a{
+    text-decoration: none;
+    color: #b7bcc0;
+}
+.userOptions_section_sidenav li i{
+    padding-right: 5px;
+}
+
  
 #PractcodeSideNavDetailsId{
     display: none;
@@ -275,78 +285,6 @@
 }
 /*  */
 
-footer{
-    width: 100%;
-    /* height: 80vh; */
-    background: #000;
-    top:10;
-    position: sticky;
-    border-top: 3px dashed gold;
-}
-footer .footerInfo{
-    padding-top: 14px;
-    width: 90%;
-    display: flex;
-    margin: auto;
-}
-.footerInfo .footerdiv1{
-    width: 70%;
-    margin: auto;
-   
-}
-.footerdiv1 .footerdiv1-peactcode{
-    display: flex;
-    color: #2196f3;
-    align-items: center;
-    border-bottom: 1px dashed #2196f3;
-    width: 20%;
-}
-.footerdiv1-peactcode img{
-    width: 25%;
-}
-.footerdiv1 p{
-    padding: 14px;
-    width: 80%;
-    letter-spacing: 2px;
-}
-.footerdiv1-social-icons button{
-    border: none;
-    background: transparent;
-    text-align: center;
-}
-.footerdiv1-social-icons i{
-    font-size: 25px;
-    padding: 14px;
-    color: gold;
-}
-
-
-
-
-
-.footerInfo .footerdiv2{
-    width: 30%;
-    margin: auto;
-}
-.footerdiv2 h3{
-    color: #fff;
-    border-bottom: 1px dashed gold;
-    padding: 14px;
-}
-.footerdiv2 .footerdiv2-latestposts{
-    display: flex;
-    width: 100%;
-}
-.footerdiv2-latestposts img{
-    width: 20%;
-}
-
-.footercopyright{
-    width: 80%;
-    margin: auto;
-    border-top: 1px dotted #2196f3;
-    text-align: center;
-}
 
 /* checkauth */
 #checkauth{
@@ -369,7 +307,7 @@ footer .footerInfo{
         padding: 0px;
     }
     .PractcodeNav_heading_logo,.PractcodeNavsidebartoggleBtn i{
-     font-size: 18px;
+     font-size: 14px;
      
     }
     .practcodeMainRoot.activeSidenav{
@@ -387,34 +325,17 @@ footer .footerInfo{
     .PractcodeNav_login,.PractcodeNav_signup{
         display: none;
     }
-    /* footer */
-    footer .footerInfo{
-        padding-top: 14px;
-        width: 100%;
+    
+    /*PractcodeNav_options  */
+    .PractcodeNav_options{
+        display: none;
     }
-    footer .footerInfo{
-        display: block;
-    }
-    .footerInfo .footerdiv1{
-        width: 100%;
-    }
-    .footerdiv1 p{
-        width: 100%;
+    /*  */
+    .PractcodeNav_heading_logo{
+        padding: 0px;
+        border-bottom: 2px dotted #2196f3;
     }
 
-    .footerInfo .footerdiv2{
-        width: 100%;
-    }
-    .footercopyright{
-        width: 40%;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        /* display: none; */
-    }
-    .footercopyright p{
-        text-align: center;
-    }
    
 }
 @media only screen and (max-width: 410px){

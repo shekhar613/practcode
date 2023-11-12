@@ -1,7 +1,7 @@
 var SideNavToggle = false
 var PractcodeSideNav = document.getElementById("PractcodeSideNavid")
-var PractcodeSidebar_userstatusid = document.getElementById("PractcodeSidebar_userstatusid")
-var PractcodeSideNavDetails = document.getElementById("PractcodeSideNavDetailsId")
+var PractcodeSidebar_userstatusid = document.getElementById("PractcodeSidebar_userOptionsid")
+// var PractcodeSideNavDetails = document.getElementById("PractcodeSideNavDetailsId")
 
 const logoutnow = ()=>{
   console.log("working")
@@ -15,17 +15,49 @@ const PractcodetoggleSidenav = () =>{
         PractcodeSideNav.classList.remove('activeSidenav')
         PractcodeSidebar_userstatusid.classList.remove('activeuser')
         document.getElementById("PractcodeMainRootid").classList.remove('activeSidenav')
-        PractcodeSideNavDetails.style.display="none"
+        // PractcodeSideNavDetails.style.display="none"
         SideNavToggle = false
     }else{
         PractcodeSideNav.classList.add('activeSidenav')
         PractcodeSidebar_userstatusid.classList.add('activeuser')
         document.getElementById("PractcodeMainRootid").classList.add('activeSidenav')
-        PractcodeSideNavDetails.style.display="flex"
+        // PractcodeSideNavDetails.style.display="flex"
         SideNavToggle = true
     }
 }
+// sidenav options selections
 
+const sidenav_options_selections=()=>{
+    // Get all list items with class "list-item"
+    var listItems = document.querySelectorAll('.side-navigation-options');
+
+    // Add click event listener to each list item
+    listItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        // Remove "active" class from all list items
+        listItems.forEach(function(li) {
+          li.classList.remove('active-option');
+        });
+
+        // Add "active" class to the clicked list item
+        this.classList.add('active-option');
+        // Save the active item index to local storage
+        var activeIndex = Array.from(listItems).indexOf(this);
+        localStorage.setItem('activeIndex', activeIndex.toString());
+
+      });
+    });
+
+    // Check if there's a stored active index in local storage
+    var storedActiveIndex = localStorage.getItem('activeIndex');
+
+    // If there is, add the "active" class to the corresponding list item
+    if (storedActiveIndex !== null) {
+      listItems[parseInt(storedActiveIndex)].classList.add('active');
+    }
+}
+sidenav_options_selections();
+// --------------------------
 
 
 $(document).ready(function() {

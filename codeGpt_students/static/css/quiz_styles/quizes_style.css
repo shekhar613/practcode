@@ -1,3 +1,11 @@
+/* utility */
+footer{
+    display: none;
+}
+
+/* --------------------- */
+
+
 .quiz_container{
     display: flex;
     justify-content: space-between;
@@ -6,7 +14,7 @@
 
 .left_container{
     width: 80%;
-    height: 100vh;
+
     padding: 15px;
     background: #f5f6f7;
 
@@ -116,7 +124,13 @@ ul li p{
     display: flex;
     width: 80%;
     margin: auto;
+    /* background: #000; */
     
+  }
+  .container .circular-progress_mainDiv{
+    /* background: #66bb6a; */
+    width: max-content;
+    margin: auto;
   }
   .container h2{
     padding: 24px;
@@ -144,13 +158,13 @@ ul li p{
     
   }
   .circular-progress {
-    
     position: relative;
     height: 250px;
     width: 250px;
     border-radius: 50%;
     display: grid;
     place-items: center;
+
   }
   .circular-progress:before {
     content: "";
@@ -167,3 +181,29 @@ ul li p{
     color: #231c3d;
   }
   
+/* for mobile view */
+@media only screen and (max-width: 950px){
+
+    .right_container{
+        display: none;
+    }
+    .left_container{
+        width: 100%;
+    }
+    .left_container .question_area{
+        width: 100%;
+    }
+    .container .quiz_result {
+        margin-left :0px;
+        padding: 14px;
+    }
+
+    .container .resultbtnsection {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+    .resultbtnsection button {
+        padding: 6px;
+    }
+
+}

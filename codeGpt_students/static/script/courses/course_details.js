@@ -1,4 +1,12 @@
 // expand the sections
+// sidenav_options_selections();
+// Check if there's a stored active index in local storage
+var storedActiveIndex = localStorage.getItem('activeIndex');
+
+// If there is, add the "active" class to the corresponding list item
+if (storedActiveIndex !== null) {
+    document.querySelectorAll('.side-navigation-options')[parseInt(storedActiveIndex)].classList.add('active');
+}
 const expandcourseSection =(id,btnID)=>{
     console.log(btnID)
     if(document.getElementById(id).classList.contains('active-section')){
