@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    /* font-family: */
 }
 /* Practcode Navbar */
 .PractcodeNav{
@@ -10,6 +10,7 @@
     background: #fff;
     display: flex;
     padding: 5px;
+    border-bottom: 1px solid #e7ecf6;
 }
 .PractcodeNavsidebartoggleBtn{
     
@@ -30,7 +31,7 @@
     /* font-size: 22px; */
     margin-left: 2%;
     font-weight: 600;
-    border-bottom: 5px dotted #2196f3;
+    border-bottom: 5px dotted #bbe0ff;
 }
 
 .PractcodeNav_options{
@@ -94,12 +95,13 @@
     width: 0%;
     min-height: 100vh;
     max-height: max-content;
-    background: #39444d;
+    background: white;
     /* background: #084c76; */
     z-index: 9999;
+    border-right: 1px solid #e7ecf6;
 }
 .PractcodeSide_nav.activeSidenav{
-    width: 18%;
+    width:15%;
     
 }
 .MycoursesBody{
@@ -107,9 +109,7 @@
     height: 100vh;
     
 }
-.PractcodeSide_nav.activeSidenav{
-    width: 20%;
-}
+
 /* courses topics display */
 .PractcodeSideNavDetails{
     display: flex;
@@ -133,7 +133,7 @@
     /* margin: auto; */
     /* text-align: center; */
     /* padding: 20px; */
-    color: #bbbbbb;
+    color: #000;
     display: none;
 }
 .PractcodeSidebar_userOptions.activeuser{
@@ -142,29 +142,38 @@
 }
 .PractcodeSidebar_userOptions .userOptions_section_sidenav{
     font-size: 15px;
-    color: white;
+    color: black;
     font-weight: 500;
     padding: 18px;
     letter-spacing: 2px;    
 
 }
 .userOptions_section_sidenav li{
+    font-size: 14.5px;
     padding: 14px;
     padding-left: 15px;
     list-style: none;
-    font-weight: 200;
+    font-weight: 300;
     cursor: pointer;
+    border-radius: 10px;
+
+    
     
 }
-.userOptions_section_sidenav .active-option{
-    background: #2f383f;
+.userOptions_section_sidenav li:hover{
+    background: rgb(242, 243, 244);
 }
-.userOptions_section_sidenav .active-option i{
-    color: #2196f3;
+.userOptions_section_sidenav .active-option{
+    background: rgb(242, 243, 244);
+}
+.userOptions_section_sidenav i{
+    color: #796aff;
+    margin-top: 2px;
+    padding-right: 10px;
 }
 .userOptions_section_sidenav li a{
     text-decoration: none;
-    color: #b7bcc0;
+    color: #000;
 }
 .userOptions_section_sidenav li i{
     padding-right: 5px;

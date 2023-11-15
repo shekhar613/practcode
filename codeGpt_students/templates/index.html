@@ -24,23 +24,20 @@
     <nav class="PractcodeNav practcode-theamer">
         <button onclick="PractcodetoggleSidenav()" class="PractcodeNavsidebartoggleBtn"><i
                 class="fa-solid fa-bars"></i></button>
-        <div class="PractcodeNav_heading_logo" style="display: flex;"> <img alt="Practcode"
-                src="{% static 'img/favicon.png' %}" style="width: 80px; height: 60px;"></img>
+       <div class="PractcodeNav_heading_logo" style="display: flex;"> <!--  <img alt="Practcode"
+                src="{% static 'img/favicon.png' %}" style="width: 80px; height: 60px;"></img> -->
             <h3 style="padding-top: 20px;">PRACTCODE</h3>
         </div>
         <div class="navtaboptions practcode-theamer">
             <button ><a class="home" href="/">Home</a></button>
             <button><a class="course-details" href="/course-details">Courses</a></button>
-            <button><a class="services" href="/services">Services</a></button>
+            <!-- <button><a class="services" href="/services">Services</a></button> -->
             <button><a href="/">Blogs</a></button>
-            <div id="theamchangerbtnDIV" class="theamchangerbtn"><i id="theamchangericonID" class="fa-regular fa-sun" onclick="changemytheam()"></i></div>
+            <!-- <div id="theamchangerbtnDIV" class="theamchangerbtn"><i id="theamchangericonID" class="fa-regular fa-sun" onclick="changemytheam()"></i></div> -->
         </div>
         <div class="PractcodeNav_options">
 
-            <div id="navsignin_signupBTNs">
-                <button class="PractcodeNav_login"><a href="/login">Log in</a></button>
-                <button class="PractcodeNav_signup"><a href="/sign-up">Sign up</a></button>
-            </div>
+            
             <div class="PractcodeNav_notify">
                 <i class="fa-solid fa-bell"></i>
                 <p id="PractcodeNav_notify"></p>
@@ -66,22 +63,19 @@
            
             <div id="PractcodeSidebar_userOptionsid" class="PractcodeSidebar_userOptions">
                 <br>
-                <br>
                 <ul class="userOptions_section_sidenav">
-                    <p>Application</p>
+                
                     <li class="side-navigation-options"><a href="/"><i class="fa-regular fa-address-card"></i>Student</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-graduation-cap"></i>Instructor</a></li>
-                </ul>
-
-                <ul class="userOptions_section_sidenav">
-                    <p>Student</p>
-                    <li class="side-navigation-options"><a href="/course-details"><i class="fa-solid fa-magnifying-glass"></i>Browse Courses</a></li>
+                    <br>                    
+                    <li id="side-navigation-options_BrowseCourse_id" class="side-navigation-options"><a href="/course-details"><i class="fa-solid fa-magnifying-glass"></i>Courses</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-book-open"></i>View Course</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-book-bookmark"></i>Take Course</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-laptop-file"></i>Take a Quiz</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-square-poll-vertical"></i>Quize Results</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-graduation-cap"></i>My Courses</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-comments"></i>community</a></li>
+                    <br>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-headset"></i>Get Help</a></li>
                     <li class="side-navigation-options"><a href=""><i class="fa-solid fa-lock"></i>Logout</a></li>
                 </ul>

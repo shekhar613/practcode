@@ -12,9 +12,8 @@ from django.contrib.auth.models import User
 
 def index(request):
 
-    # return render(request,"useraccount/login.html")
 
-    return render(request,"index.html")
+    return render(request,"home.html")
 
 def userlogin(request):
     return render(request,"useraccount/login.html")
