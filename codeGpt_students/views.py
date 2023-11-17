@@ -89,7 +89,8 @@ def error_page_not_found(request,exception):
 def quiz(request):
     
     return render(request,'quiz/check_new_user.html')
-
+def take_course(request):
+    return render(request,'courses/take_course.html')
 # django JWT
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.tokens import RefreshToken

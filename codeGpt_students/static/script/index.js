@@ -2,7 +2,7 @@ var SideNavToggle = false
 var PractcodeSideNav = document.getElementById("PractcodeSideNavid")
 var PractcodeSidebar_userstatusid = document.getElementById("PractcodeSidebar_userOptionsid")
 // var PractcodeSideNavDetails = document.getElementById("PractcodeSideNavDetailsId")
-
+document.getElementsByTagName('body')[0].style['user-select'] = 'none';
 const logoutnow = ()=>{
   
   document.cookie = "authenticationuser=; max-age=0; path=/;";

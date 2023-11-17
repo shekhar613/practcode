@@ -9,7 +9,6 @@
     /* background: #2196f3; */
     background: #fff;
     display: flex;
-    padding: 5px;
     border-bottom: 1px solid #e7ecf6;
 }
 .PractcodeNavsidebartoggleBtn{
@@ -31,9 +30,12 @@
     /* font-size: 22px; */
     margin-left: 2%;
     font-weight: 600;
-    border-bottom: 5px dotted #bbe0ff;
+    display: flex;
 }
-
+.PractcodeNav_heading_logo img{
+    width: 160px;
+    height: 50px;
+}
 .PractcodeNav_options{
     display: flex;
     /* background: #000; */
@@ -67,7 +69,7 @@
 
 }
 .PractcodeNav_notify{
-    color: #2196f3;
+    color: #796aff;
 }
 .PractcodeNav_notify #PractcodeNav_notify{
     /* background: red; */
@@ -80,7 +82,7 @@
     cursor: pointer;
     background: transparent;
     border: none;
-    color: #2196f3;
+    color: #796aff;
     margin-left:15px;
 }
 
@@ -341,8 +343,10 @@
     }
     /*  */
     .PractcodeNav_heading_logo{
-        padding: 0px;
-        border-bottom: 2px dotted #2196f3;
+        padding: 8px;
+       
+        justify-content: center;
+        align-items: center;
     }
 
    

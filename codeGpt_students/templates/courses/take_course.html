@@ -1,0 +1,84 @@
+{% extends "index.html" %} {% block title %} - Learn C{% endblock %}
+{% block headcontain %}
+{% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/coursecardui/take_course.css' %}" />
+{% endblock %}   
+{% block Mainroot %}
+<button class="course-main-div-toggle" onclick="toggle_takeCourse_bar(this)"><i class="fa-solid fa-angles-left" id="course-status-bar-toggle-iconID"></i> <h2>Course contents</h2></button><br>
+    <div class="take-course-main-div">
+        <div class="course-status-bar" id="course-status-barID">
+            
+            <div class="sidebar-content">
+                <button>Course - Learn C</button>
+                <ul>
+                    <h4>C Basic </h4>
+                    <li>C Introduction</li>
+                    <li>C get Started</li>
+                    <li>Syntax</li>
+                    <li>Comments</li>
+                    <li>Outputs</li><br>
+
+                    <h4>C Functions</h4>
+                    <li>Funtions</li>
+                    <li>Funtions Parameters</li>
+                    <li>Function Declaration</li>
+                    <li>Recursion</li>
+                    <li>Build in Functions</li>
+
+                    <li>lessons</li>
+                    <li>lessons</li><br>
+                    <li>lessons</li>
+                    <li>lessons</li>
+
+                    <li>lessons</li>
+                    <li>lessons</li>
+                    <li>lessons</li><br>
+                    <li>lessons</li>
+
+                    <li>lessons</li>
+                    <li>lessons</li>
+                    <li>lessons</li><br>
+
+                    <li>lessons</li>
+                    <li>lessons</li>
+                    <li>lessons</li><br>
+                    <li>lessons</li>
+                    <li>lessons</li>
+
+                    <li>lessons</li>
+                    <li>lessons</li><br>
+                    <li>lessons</li>
+                    <li>lessons</li>
+
+                    <li>lessons</li><br>
+                </ul>
+            </div>
+            <div class="sidebar-option">
+                <button class="Practcode-upgrad-btn">
+                    <i class="fa-solid fa-arrow-up-right-dots"></i>
+                    <div class="upgrad-text">
+                        <h3>Upgrade</h3>
+                        <p>Get practcode-pro and more</p>
+                    </div>
+                </button><br>
+                <button class="user-profile-btn">
+                    <i class="fa-regular fa-user"></i>
+                    <div class="user-profile-text">
+                        <h3>Username</h3>
+                        <p>practcode -user</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="course-content-area" id="course-content-areaID">area</div>
+    </div>
+
+<script src="{% static 'script/courses/take-course.js' %}"></script>
+
+{% endblock %}
+
+{% block scriptcontain %}
+    
+    
+{% endblock %}
