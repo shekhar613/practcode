@@ -10,10 +10,8 @@
     display: flex;
 }
 .take-course-main-div .course-status-bar{
-    width: 30%;
-   height: 100vh;
-    
-  
+    width: 40%;
+    height: 100vh;
     border-right: 1px solid rgb(226, 226, 226);
 }
 .course-main-div-toggle{
@@ -24,17 +22,15 @@
     position: absolute;
     cursor: pointer;
     justify-content: space-between;
-    
-
 }
 .course-main-div-toggle i{
-    color: #5340ff;
+    color: #18153c;
     font-size: 18px;
     padding: 14px;
 
 }
 .course-main-div-toggle h2{
-    color: #5340ff;
+    color: #18153c;
     padding: 10px;
 }
 .sidebar-content{
@@ -52,22 +48,19 @@
     border: none;
     color: #5340ff;
     border-radius: 5px;
-
+    text-wrap: nowrap;
 }
-
-
 .sidebar-option{
-    padding-bottom: 10px;
-    position: fixed;
+   
     height: max-content;
-    width: 280px;
+    width: 100%;
     background: white;
-    bottom: 0%;
+  
 
 }
 .sidebar-option button{
     width: 90%;
-    
+    margin: auto;
     background: rgb(242, 243, 244);
     padding: 10px;
     cursor: pointer;
@@ -85,8 +78,8 @@
 .Practcode-upgrad-btn i{
     width: 15%;
     border-radius: 100%;
-    border: 0.5px solid #5340ff;
-    padding: 10px;
+   
+    padding: 8px;
     
 }
 .Practcode-upgrad-btn .upgrad-text{
@@ -98,7 +91,7 @@
 .user-profile-btn i{
     width: 15%;
     border-radius: 100%;
-    border: 0.5px solid #5340ff;
+   
     padding: 10px;
 }
 .user-profile-btn {
@@ -124,6 +117,7 @@
     padding: 9px 10px 10px;
     color: #000;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 .sidebar-content ul li:hover{
     background: rgb(242, 243, 244);
@@ -143,6 +137,9 @@
  .course-content-area.full-width{
     width: 90%;
   
+ }
+ .topic-details p{
+    letter-spacing: 1px;
  }
 
  @media only screen and (max-width: 950px){

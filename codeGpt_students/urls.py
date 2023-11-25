@@ -35,7 +35,8 @@ urlpatterns = [
     path('admin-access/fetch-all/<str:mode>',views.Admin_access.as_view()),    
 
 
-
+    # course content urls
+    path('get-course-cotent/',views.send_course_content.as_view()),
 
 ]
 handler404 = 'codeGpt_students.views.error_page_not_found'

@@ -17,7 +17,7 @@
     {% block headcontain %}{% endblock %}
 </head>
 
-<body ondragstart="return false;" ondrop="return false;">
+<body ondragstart="return false;" ondrop="return false;" onload="changeToggleForScreenSize()">
     <button id="checkauth"></button>
     <div id="preloader"
         style="background:  #8cc5dd url({% static 'img/preloader.gif' %}) no-repeat center ;background-size: 18%"></div>

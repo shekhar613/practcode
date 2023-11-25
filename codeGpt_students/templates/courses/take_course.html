@@ -11,55 +11,24 @@
             
             <div class="sidebar-content">
                 <button>Course - Learn C</button>
-                <ul>
-                    <h4>C Basic </h4>
-                    <li>C Introduction</li>
-                    <li>C get Started</li>
-                    <li>Syntax</li>
-                    <li>Comments</li>
-                    <li>Outputs</li><br>
-
-                    <h4>C Functions</h4>
-                    <li>Funtions</li>
-                    <li>Funtions Parameters</li>
-                    <li>Function Declaration</li>
-                    <li>Recursion</li>
-                    <li>Build in Functions</li>
-
-                    <li>lessons</li>
-                    <li>lessons</li><br>
-                    <li>lessons</li>
-                    <li>lessons</li>
-
-                    <li>lessons</li>
-                    <li>lessons</li>
-                    <li>lessons</li><br>
-                    <li>lessons</li>
-
-                    <li>lessons</li>
-                    <li>lessons</li>
-                    <li>lessons</li><br>
-
-                    <li>lessons</li>
-                    <li>lessons</li>
-                    <li>lessons</li><br>
-                    <li>lessons</li>
-                    <li>lessons</li>
-
-                    <li>lessons</li>
-                    <li>lessons</li><br>
-                    <li>lessons</li>
-                    <li>lessons</li>
-
-                    <li>lessons</li><br>
+                {% for key, value in data.items %}
+                
+                <ul id="course_topics_ulID">
+                    <h4>{{ key }}</h4>
+                    {% for item in value %}
+                        <li value="{{ item }}">{{ item }}</li>
+                    {% endfor %}
+                    <br>
                 </ul>
+                {% endfor %}
+               
             </div>
             <div class="sidebar-option">
                 <button class="Practcode-upgrad-btn">
                     <i class="fa-solid fa-arrow-up-right-dots"></i>
                     <div class="upgrad-text">
                         <h3>Upgrade</h3>
-                        <p>Get practcode-pro and more</p>
+                        <p>Get practcode-pro</p>
                     </div>
                 </button><br>
                 <button class="user-profile-btn">
@@ -71,9 +40,19 @@
                 </button>
             </div>
         </div>
-        <div class="course-content-area" id="course-content-areaID">area</div>
+        <div class="course-content-area" id="course-content-areaID">
+            <div class="topic-title">
+                <h2>Introduction to Programming and C </h2>
+                <br>
+                <h4 class="sub-topic" id="sub-topicID" >What is Programming ?</h4><br>
+                
+            </div>
+            <div class="topic-details">
+                <div id="course-text-ID"></div>
+            </div>
+        </div>
     </div>
-
+    
 <script src="{% static 'script/courses/take-course.js' %}"></script>
 
 {% endblock %}
