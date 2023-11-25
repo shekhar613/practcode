@@ -338,53 +338,12 @@ class Admin_access(APIView):
 
 class send_course_content(APIView):
     def post(self,request):
-        '''formate
-        
-        const a = [
-	{
-  	heading: {
-    	value: "",
-      children: [
-      	{
-        	subHeading : {
-          	value: "History and Influence",
-            children: [
-            	{
-              	paragraph: {
-                	value: "Programming is like giving instructions to a computer to make it do what you want. Imagine you're telling a robot how to make a sandwich. You need to explain every step, like picking up the bread, spreading the butter, and putting a slice of cheese on top. In programming, instead of a sandwich, you're making a computer program, and the steps are written in a special language the computer understands.Just like different people speak different languages, there are many programming languages, like Python, Java, or C. Each one has its own way of writing instructions, but they all tell the computer how to perform tasks, solve problems, or create something, like a game or a website. So, programming is basically writing a detailed, step-by-step recipe that tells the computer what to do to achieve a specific goal.- Overview of the C Language(En)The C programming language is a powerful and versatile language that has been a cornerstone in the field of computer programming for decades. Here's an overview to help you understand its key aspects"
-                }
-              }
-            ]
-          }
-        },
-        {
-        	subHeading: {
-          	value: "History and Influence",
-            children: [
-            	{
-              	paragraph: {
-                	value: " Developed in the early 1970s by Dennis Ritchie at AT&T Bell Labs, C was designed for system programming and to write operating systems. Its influence is profound, as it has inspired many other popular languages, including C++, C#, Java, and Python."
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  }
-];
-        
-        '''
-       
-
         # load all the topics from the json file
         with open('codeGpt_students/c-course-sample-data.json','r') as quizes:
             file_contents = json.loads(quizes.read())
-
-
         data=file_contents['Introduction to Programming and C'][request.data['key']]
         if type(data) ==str:
-            print('string data...')
+         
             jsondata = {
             "heading":{
                 "value": "",
@@ -413,7 +372,7 @@ class send_course_content(APIView):
             }
             print('dict data....')
             for i in data:
-                print(i)
+              
                 d={
                     "subHeading" : {
                             "value": i,
@@ -427,7 +386,7 @@ class send_course_content(APIView):
                 }
                 jsondata['heading']['children'].append(d)
             
-            print(jsondata)
+       
 
         return Response([jsondata],status=200)
 

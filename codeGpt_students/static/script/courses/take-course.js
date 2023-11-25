@@ -80,7 +80,7 @@ const type = async (ele, text, i, cb) => {
 	if ( i < text.length+1 ) {
 		ele.innerHTML = text.substring(0, i++);
 		// generate a random Number to emulate Typing on the Keyboard.
-		var rndTyping = 11- Math.random() * 100;
+		var rndTyping = 60- Math.random() * 100;
     await wait( function () { 
 			type(ele, text, i++, cb)
 		}, rndTyping )
@@ -100,7 +100,7 @@ async function jsonToHtml(json) {
 
   async function convertNode(node, level) {
     
-    const indentation = ' '.repeat(level * 2);
+    const indentation = '  '.repeat(level * 2);
     let tag;
     let value = "emptyy";
     let Node
@@ -112,8 +112,9 @@ async function jsonToHtml(json) {
     } else if (node.subHeading) {
     tag = document.createElement("h3");
     value = node.subHeading.value;
+    console.log()
     Node = node.subHeading
-      result += `${indentation}<h${4 + level}>${node.subHeading.value}</h${4 + level}>\n`;
+      result += `${indentation}<h${4 + level}>${'@'+value}</h${4 + level}>\n`;
     } else if (node.paragraph) {
     tag = document.createElement("p");
     Node = node.paragraph
