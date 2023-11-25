@@ -1,5 +1,5 @@
 var toggleFlag = true;
-const toggle_takeCourse_bar = (e) => {
+const toggle_takeCourse_bar = () => {
  
   document.getElementById("course-content-areaID").classList.add("responsive");
   if (toggleFlag) {
@@ -60,6 +60,10 @@ listItems.forEach(function (item) {
         // clear screen
         document.getElementById("course-text-ID").innerHTML=""
         document.getElementById("sub-topicID").innerText=topicName
+        // for phone view
+        if (innerWidth<=950){
+          toggle_takeCourse_bar();
+        }
         jsonToHtml(data);
         
       },
@@ -80,9 +84,7 @@ const type = async (ele, text, i, cb) => {
     await wait( function () { 
 			type(ele, text, i++, cb)
 		}, rndTyping )
-		/* setTimeout( function () { 
-		  typeWriter(text, i++)
-		},rndTyping); */
+		
 	} else if (i === text.length+1) {
 		
     cb()
@@ -126,9 +128,7 @@ async function jsonToHtml(json) {
       for(let i of Node.children){
     		await convertNode(i, level + 1);
   		}
-      /* node.children.forEach(child => {
-        convertNode(child, level + 1);
-      }); */
+      
     }
   }
 
@@ -139,4 +139,3 @@ async function jsonToHtml(json) {
 
 const contentSection = document.getElementById("course-text-ID");
 
-// jsonToHtml(a);
