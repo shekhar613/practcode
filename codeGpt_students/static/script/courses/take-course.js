@@ -80,7 +80,7 @@ const type = async (ele, text, i, cb) => {
 	if ( i < text.length+1 ) {
 		ele.innerHTML = text.substring(0, i++);
 		// generate a random Number to emulate Typing on the Keyboard.
-		var rndTyping = 60- Math.random() * 100;
+		var rndTyping = 95- Math.random() * 100;
     await wait( function () { 
 			type(ele, text, i++, cb)
 		}, rndTyping )
