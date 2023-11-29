@@ -96,9 +96,10 @@ def take_course(request):
     with open('codeGpt_students/c-course-sample-data.json','r') as quizes:
         file_contents = json.loads(quizes.read())
         data={}
-        data['Introduction to Programming and C']=[]
-    for i in file_contents['Introduction to Programming and C']:
-        data['Introduction to Programming and C'].append(i)
+    for d in file_contents:
+        data[d]=[]
+        for i in file_contents[d]:
+            data[d].append(i)
     
     return render(request,'courses/take_course.html',{"data":data})
 
@@ -335,7 +336,7 @@ class send_course_content(APIView):
         # load all the topics from the json file
         with open('codeGpt_students/c-course-sample-data.json','r') as quizes:
             file_contents = json.loads(quizes.read())
-        data=file_contents['Introduction to Programming and C'][request.data['key']]
+        data=file_contents[request.data['heading']][request.data['key']]
         if type(data) ==str:
          
             jsondata = {

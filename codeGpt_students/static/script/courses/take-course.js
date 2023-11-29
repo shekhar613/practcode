@@ -51,10 +51,11 @@ listItems.forEach(function (item) {
   item.addEventListener("click", function () {
     // Retrieve the value of the clicked list item
     var topicName = item.getAttribute("value");
+    var headingKey = item.className;
     $.ajax({
       type: "POST",
       url: "/get-course-cotent/",
-      data: { key: topicName },
+      data: { key: topicName,heading:headingKey },
       success: function (data) {
         console.log(data)
         //    after submission
@@ -77,7 +78,19 @@ listItems.forEach(function (item) {
   });
 });
 
-
+var topicdropdown_flag=true; 
+const topicdropdown=(e)=>{  
+  var div = document.getElementById(e.innerText)
+  if(div.style.display=='block'){
+    div.style.display='none'
+    document.getElementById('dropdownarrowid-for-course-content-'+e.innerText).classList='fa-solid fa-square-caret-down'
+    topicdropdown_flag=false;
+  }else{
+    div.style.display='block'
+    document.getElementById('dropdownarrowid-for-course-content-'+e.innerText).classList='fa-solid fa-square-caret-up'
+    topicdropdown_flag=true;
+  }
+}
 
 const addQuiz = (data,key) =>{
   console.log(data[1][key]['question'])

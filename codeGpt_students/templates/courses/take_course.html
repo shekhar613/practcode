@@ -13,19 +13,22 @@
                 <button>Course - Learn C</button>
                 {% for key, value in data.items %}
                 
-                <ul id="course_topics_ulID">
-                    <h4>{{ key }}</h4>
+                <ul id="course_topics_ulID" class="{{ key }}">
+           
+                    <h4 onclick='topicdropdown(this)'><i class="fa-solid fa-square-caret-up" id='dropdownarrowid-for-course-content-Lesson-{{ key|slice:":1" }}' style="color: blue;padding-right: 5px;"></i>Lesson-{{ key|slice:":1" }}</h4>
+                    <div class="Lesson-{{ key|slice:':1' }}" id="Lesson-{{ key|slice:':1' }}" style="display: block;">
                     {% for item in value %}
                         {% if "Quiz" in item %}
 
-                            <li value="{{ item }}"><i class="fa-solid fa-ranking-star" style="color: gold;font-size: 20px;padding-right: 8px;"></i> {{ item }}</li>
+                            <li value="{{ item }}" class="{{ key }}"><i class="fa-solid fa-ranking-star" style="color: gold;font-size: 20px;padding-right: 8px;"></i> {{ item }}</li>
                         
                         {% else %}
-                            <li value="{{ item }}"> {{ item }}</li>
+                            <li value="{{ item }}" class="{{ key }}"> {{ item }}</li>
                         {% endif %}   
                         
                         
                     {% endfor %}
+                    </div>
                     <br>
                 </ul>
                 {% endfor %}

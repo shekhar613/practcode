@@ -39,14 +39,17 @@
 }
 .sidebar-content button{
     width: 90%;
-    background: transparent;
-    padding: 15px;
+    padding: 13px;
     font-size: 18px;
     font-weight: 600;
     border: none;
     color: #5340ff;
-    border-radius: 5px;
+    border-radius: 10px;
     text-wrap: nowrap;
+    background: #ebe8ff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .sidebar-option{
    
@@ -108,6 +111,10 @@
 }
 .sidebar-content ul h4{
     color: #5340ff;
+    background: #f9f0ff;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
    
 }
 .sidebar-content ul li{
@@ -187,6 +194,7 @@
     border-radius: 5px;
     cursor: pointer;
     background: #5340ff;
+    
 }
 
 /*  */
@@ -196,7 +204,7 @@
     border-radius: 10px;
 }
 #course-text-ID p{
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 .subtopic-h3-class{
    
