@@ -13,6 +13,11 @@
             "Basic Syntax":"C has a straightforward syntax that includes functions, variables, data types, operators, control structures, and more.",
             "Standard Library":" C comes with a standard library that includes functions for tasks like I/O operations, string handling, mathematical computations, and more."
         },
+        "Quiz - 1":{
+            "question":"what is programming",
+            "options":["software","hardware","virus","Computer system"],
+            "ans":"software"
+        },
         "Applications":{
             "System Software":"Operating systems, compilers, and network drivers are often written in C.",
             "Application Software":"Due to its efficiency and control, it's used in developing desktop applications, games, and other performance-critical applications.",
@@ -26,6 +31,11 @@
             "Manual Memory Management":"Unlike higher-level languages, C requires manual handling of memory, which can be complex and prone to errors like memory leaks.",
             "Lack of Modern Features":"Being an older language, C lacks some of the features and safety mechanisms found in newer languages."
         },
-        "summary":"In summary, C is a foundational language in the world of programming. Its efficiency, simplicity, and close relationship with the underlying hardware make it an enduring and relevant language, even in today's rapidly evolving tech landscape."
+        "summary":"In summary, C is a foundational language in the world of programming. Its efficiency, simplicity, and close relationship with the underlying hardware make it an enduring and relevant language, even in today's rapidly evolving tech landscape.",
+        "Quiz - 2":{
+            "question":"what is computer's language",
+            "options":["Python","C","Java","Machine/Binary language"],
+            "ans":"Machine/Binary language"
+        }
     }
 }

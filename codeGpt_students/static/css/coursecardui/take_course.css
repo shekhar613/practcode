@@ -15,7 +15,8 @@
     border-right: 1px solid rgb(226, 226, 226);
 }
 .course-main-div-toggle{
-    background: white;
+    background: rgb(0, 0, 0);
+    color: #7d69ff;
     border: none;
     border-radius: 11px;
     display: flex ;
@@ -24,15 +25,12 @@
     justify-content: space-between;
 }
 .course-main-div-toggle i{
-    color: #18153c;
+    color: #7d69ff;
     font-size: 18px;
     padding: 14px;
 
 }
-.course-main-div-toggle h2{
-    color: #18153c;
-    padding: 10px;
-}
+
 .sidebar-content{
     overflow: auto;
     height: 80vh;
@@ -125,11 +123,12 @@
 }
 
 #course-text-ID h3{
-    padding: 14px 0px 14px ;
+    padding: 0px 5px 0px;
+    margin: 14px 0px 14px;
 }
 #course-text-ID p{
-    padding: 0px 10px 0px ;
-    letter-spacing: 0.5px;
+    padding: 0px 28px 0px ;
+   
 }
 
 
@@ -149,6 +148,64 @@
     letter-spacing: 1px;
  }
 
+.quize-div{
+    width: 70%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.quize-div .quize-question{
+    padding: 14px;
+}
+.quize-options{
+    padding: 14px;
+
+}
+.quize-options li{
+    padding: 14px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 18x;
+   
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.quize-options li input,label{
+
+    cursor: pointer;
+
+}
+
+.quize-div button{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #5340ff;
+}
+
+/*  */
+.topic-title-main{
+    padding: 10px;
+    background: rgb(243, 243, 255);
+    border-radius: 10px;
+}
+#course-text-ID p{
+    letter-spacing: 2px;
+}
+.subtopic-h3-class{
+   
+    border-left: 4px solid rgb(194, 194, 255);
+    border-radius: 30px;
+}
+/*  */
+
+
  @media only screen and (max-width: 950px){
     .take-course-main-div .course-status-bar{
         width: 100%;
@@ -165,5 +222,16 @@
 
     .take-course-main-div .course-content-area.full-width{
         display: block;
+    }
+    /* quiz */
+    .quize-div{
+        border-top: 1px solid #e5e5e5;
+        width: 100%;
+        margin: auto;
+        border-radius: none;
+        box-shadow:none;
+    }
+    .quize-options li{
+        margin: 10px;
     }
  }

@@ -100,14 +100,10 @@ def take_course(request):
     for i in file_contents['Introduction to Programming and C']:
         data['Introduction to Programming and C'].append(i)
     
-
-    print(data)
-
-
-
     return render(request,'courses/take_course.html',{"data":data})
 
-
+def profile(request,data):
+    return render(request,'student/profile.html')
 
 # django JWT
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -302,8 +298,6 @@ def admin(request):
       
       return render(request,"Admin_controls/admin-index.html",)
 
-
-
 # API VIEWS TO HANDLE REQUESTS
 
 class Practcode_Courses(APIView):
@@ -363,28 +357,31 @@ class send_course_content(APIView):
         }
             
         else:
-            jsondata = {
-                "heading":{
-                    "value": "",
-                    "children": [
-                            ]
+            if 'Quiz' in str(request.data['key']):
+                return Response(["quize",{request.data['key']:data}],status=200)
+            else:
+                jsondata = {
+                    "heading":{
+                        "value": "",
+                        "children": [
+                                ]
+                    }
                 }
-            }
-            print('dict data....')
-            for i in data:
-              
-                d={
-                    "subHeading" : {
-                            "value": i,
-                            "children": [
-                                {
-                                "paragraph": {
-                                    "value": data[i]
+            
+                for i in data:
+                
+                    d={
+                        "subHeading" : {
+                                "value": i,
+                                "children": [
+                                    {
+                                    "paragraph": {
+                                        "value": data[i]
+                                        }
                                     }
-                                }
-                            ]}
-                }
-                jsondata['heading']['children'].append(d)
+                                ]}
+                    }
+                    jsondata['heading']['children'].append(d)
             
        
 

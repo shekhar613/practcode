@@ -56,15 +56,21 @@ listItems.forEach(function (item) {
       url: "/get-course-cotent/",
       data: { key: topicName },
       success: function (data) {
+        console.log(data)
         //    after submission
         // clear screen
         document.getElementById("course-text-ID").innerHTML=""
-        document.getElementById("sub-topicID").innerText=topicName
+        document.getElementById("sub-topicID").innerText="👉 "+topicName
         // for phone view
         if (innerWidth<=950){
           toggle_takeCourse_bar();
         }
-        jsonToHtml(data);
+        if(data.includes("quize")){
+          console.log("quize in content")
+          addQuiz(data,topicName)
+        }else{
+          jsonToHtml(data);
+        }
         
       },
     });
@@ -73,6 +79,36 @@ listItems.forEach(function (item) {
 
 
 
+const addQuiz = (data,key) =>{
+  console.log(data[1][key]['question'])
+
+  const options = data[1][key]['options']; // Assuming 'options' holds an array of option values
+
+  let optionsHTML = ''; // Variable to store the HTML for options
+
+  // Loop through options and create <li> elements
+  options.forEach((option, index) => {
+    optionsHTML += `
+      <li>
+          <input type="radio" name="option" id="radio${index + 1}" value="${option}">
+          <label for="radio${index + 1}">${option}</label>
+      </li>
+    `;
+  });
+
+
+  // Inject the generated options into the HTML
+  contentSection.innerHTML=` <div class="quize-div">
+  <h2 class="quize-question">Quize time</h2>
+  <p>${data[1][key]['question']}</p>
+  <ul class="quize-options">
+    ${optionsHTML}
+  </ul>
+  <button class="quize-submite-btn">Submit</button>
+</div>
+  `
+
+}
 
 const wait = (cb, time) => new Promise( (res, rej)=> setTimeout( function () { cb(); res(); }, time ) );
 
@@ -111,6 +147,11 @@ async function jsonToHtml(json) {
       result += `${indentation}<h${1 + level}>${node.heading.value}</h${2 + level}>\n`;
     } else if (node.subHeading) {
     tag = document.createElement("h3");
+    tag.classList.add('subtopic-h3-class')
+
+    
+   
+    
     value = node.subHeading.value;
     console.log()
     Node = node.subHeading

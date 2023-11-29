@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'css/coursecardui/take_course.css' %}" />
 {% endblock %}   
 {% block Mainroot %}
-<button class="course-main-div-toggle" onclick="toggle_takeCourse_bar()"><i class="fa-solid fa-angles-left" id="course-status-bar-toggle-iconID"></i> <h2>Course contents</h2></button><br>
+<button class="course-main-div-toggle" onclick="toggle_takeCourse_bar()"><i class="fa-solid fa-angles-left" id="course-status-bar-toggle-iconID"></i> </button><br>
     <div class="take-course-main-div">
         <div class="course-status-bar" id="course-status-barID">
             
@@ -16,7 +16,15 @@
                 <ul id="course_topics_ulID">
                     <h4>{{ key }}</h4>
                     {% for item in value %}
-                        <li value="{{ item }}">{{ item }}</li>
+                        {% if "Quiz" in item %}
+
+                            <li value="{{ item }}"><i class="fa-solid fa-ranking-star" style="color: gold;font-size: 20px;padding-right: 8px;"></i> {{ item }}</li>
+                        
+                        {% else %}
+                            <li value="{{ item }}"> {{ item }}</li>
+                        {% endif %}   
+                        
+                        
                     {% endfor %}
                     <br>
                 </ul>
@@ -42,13 +50,19 @@
         </div>
         <div class="course-content-area" id="course-content-areaID">
             <div class="topic-title">
-                <h1>Introduction to Programming and C </h1>
                 <br>
-                <h2 class="sub-topic" id="sub-topicID" >What is Programming ?</h2><br>
+                <h2 class="topic-title-main">Introduction to Programming and C </h2>
+                <br>
+                <h2 class="sub-topic" id="sub-topicID" ></h2><br>
                 
             </div>
             <div class="topic-details">
-                <div id="course-text-ID"></div>
+                <div id="course-text-ID">
+
+                    
+
+                </div>
+
             </div>
         </div>
     </div>

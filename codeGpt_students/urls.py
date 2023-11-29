@@ -22,6 +22,7 @@ urlpatterns = [
     path('course/<int:id>',views.course_by_id,name='course_by_id'),
     path('services',views.services,name='services'),
     path('take-course',views.take_course,name='take-course'),
+    path('profile/<str:data>',views.profile,name='profile'),
     # API Views with authentications
     path('user/',views.Authenticateuser.as_view()),
     path('register/',views.Registeruser.as_view()), #token auhtentication

@@ -1,0 +1,50 @@
+{% extends "index.html" %} {% block title %} - Learn C{% endblock %}
+{% block headcontain %}
+{% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/homePage/profile.css' %}" />
+{% endblock %}   
+{% block Mainroot %}
+<div class="profile-div">
+    <div class="profile-upper">
+        <div class="profile">
+            <div class="circle-profile">
+
+            </div>
+            <div class="user-name">
+                <span> <h2>Chandrashekhar arya </h2><br><p>Silver Member</p></span>
+                
+            </div>
+        </div>
+        <div class="profile-horizontal">
+            <button>Analysis</button>
+            <button>Test</button>
+            <button>Notes</button>
+            <button>Questions</button>
+        </div>
+    </div>
+    
+    <div class="profile-bottum">
+        <div class="my-course-section">
+            <h3>My Course</h3>
+            <div class="my-course-card">
+                <div class="card-course-img"><h2>.C</h2></div>
+                <div class="card-details">
+                    <h4>Lean C</h4>
+                    <button>Continue to course</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <script src="{% static 'script/courses/take-course.js' %}"></script> -->
+
+{% endblock %}
+
+{% block scriptcontain %}
+    
+    
+{% endblock %}
