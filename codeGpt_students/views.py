@@ -9,6 +9,8 @@ from .models import *
 from .serializers import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+# utilities
+from codeGpt_students._utilities import test_case_process
 
 def index(request):
 
@@ -359,7 +361,11 @@ class send_course_content(APIView):
             
         else:
             if 'Quiz' in str(request.data['key']):
+                data.pop('ans')
                 return Response(["quize",{request.data['key']:data}],status=200)
+            elif 'Question' in str(request.data['key']):
+                data.pop('answer')
+                return Response(["question",{request.data['key']:data}],status=200) 
             else:
                 jsondata = {
                     "heading":{
@@ -388,3 +394,19 @@ class send_course_content(APIView):
 
         return Response([jsondata],status=200)
 
+class course_question_testCase(APIView):
+    def post(self,request):
+        try:
+            # load all the topics from the json file
+            with open('codeGpt_students/c-course-sample-data.json','r') as quizes:
+                file_contents = json.loads(quizes.read())
+            Testcases=file_contents[request.data['heading']][request.data['key']]
+
+
+            status=test_case_process.C_testcase.test(testcases=Testcases['public'],code=request.data['code'],expected_ans=Testcases['answer']['public'])
+           
+        except Exception as Err:
+            status="Syntax Error !"
+            
+        
+        return Response({"status":status})

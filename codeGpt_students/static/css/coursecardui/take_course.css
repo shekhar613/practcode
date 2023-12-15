@@ -211,9 +211,102 @@
     border-left: 4px solid rgb(194, 194, 255);
     border-radius: 30px;
 }
+/*practice-code-section */
+.pacrtice-code-question-div{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.code-question{
+    padding: 14px 14px 14px;
+    width: 30%;
+    background: #f3f3ff;
+    
+}
+.code-question h6{
+    border-bottom: 2px dotted #d7d7d7;
+    padding: 12px;
+    font-weight: 600;
+}
+.code-question p.question-explaination{
+    padding: 12px 0px 12px;
+}
+.editor-area{
+    width: 70%;
+    padding-left: 10px;
+}
+.user-code{
+    width: 100%;
+    padding: 14px 0px 0px;
+    background: #ebe8ff;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
+.user-code h5{
+    padding-left: 2px;
+    margin: 0px 27px 8px;
+    border-left: 3px solid black;
+    color: #919191;
+}
+.submit-btn{
+    cursor: not-allowed;
+    background: rgb(185, 255, 185);
+}
+
+.user-code-btnsection{
+    width: 90%;
+   
+    padding: 14px 0px 14px;
+    display: flex;
+    justify-content: space-between;
+}
+.user-code-btnsection button{
+    border: none;
+    padding:10px;
+    background: #5340ff;
+    color: white;
+    border-radius: 5px;
+}
+.test-caese-btns button{
+    background: rgb(255, 255, 255);
+    color: #000;
+    border: 1px solid #dfdfdf;
+    margin-left: 3px;
+}
+.user-code-btnsection .submit-btn{
+    cursor: not-allowed;
+    background: rgb(162, 162, 162);
+}
 /*  */
+#editor {
+    position:relative;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+#editor-box-id{
 
-
+}
+.editor-sucess-box{
+    margin: 5px;
+    background: rgb(96, 255, 87);
+    padding: 12px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 5px solid rgb(0, 255, 55);
+    color: rgb(31, 209, 0); 
+}
+.editor-error-box{
+    margin: 5px;
+    background: rgb(255, 173, 173);
+    padding: 12px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 5px solid red;
+    color: red;
+}
+/*  */
  @media only screen and (max-width: 950px){
     .take-course-main-div .course-status-bar{
         width: 100%;

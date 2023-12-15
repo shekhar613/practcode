@@ -38,6 +38,6 @@ urlpatterns = [
 
     # course content urls
     path('get-course-cotent/',views.send_course_content.as_view()),
-
+    path('questiontestcase/',views.course_question_testCase.as_view())
 ]
 handler404 = 'codeGpt_students.views.error_page_not_found'

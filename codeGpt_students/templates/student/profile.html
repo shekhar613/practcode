@@ -1,50 +1,186 @@
 {% extends "index.html" %} {% block title %} - Learn C{% endblock %}
 {% block headcontain %}
 {% load static %}
-    
-    <link rel="stylesheet" href="{% static 'css/homePage/profile.css' %}" />
-{% endblock %}   
+
+<link rel="stylesheet" href="{% static 'css/homePage/profile.css' %}" />
+{% endblock %}
 {% block Mainroot %}
 <div class="profile-div">
     <div class="profile-upper">
         <div class="profile">
             <div class="circle-profile">
-
+                <img src="{% static 'img/Icons/profile.png' %}" alt="">
             </div>
             <div class="user-name">
-                <span> <h2>Chandrashekhar arya </h2><br><p>Silver Member</p></span>
+                <span>
+                    <h2>Chandrashekhar arya </h2><br>
+                    <p>Silver Member</p>
+                </span>
+
+            </div>
+        </div>
+        <div class="progress">
+            <div class="secondary-box">
+                <!-- Initiated -->
+                <div class="progress-bar-outerbox active">
+                    <div class="progress-bar"></div>
+                    <div class="user-running">
+                        <!-- user running -->
+                        <img src="{% static 'img/Icons/user-running.png' %}" alt="">
+                    </div>
+                </div>
+                <!-- mile stone first -->
+                <div class="mile-stone mile-stone-first">
+                    <img src="{% static 'img/Icons/flag.png' %}" alt="">
+                </div>
+
+                <!-- running for second stone -->
+                <div class="progress-bar-outerbox">
+                    <div class="progress-bar"></div>
+                    <div class="user-running">
+                        <!-- user running -->
+                        <img src="{% static 'img/Icons/user-running.png' %}" alt="">
+                    </div>
+                </div>
+                <!-- mile stone second -->
+                <div class="mile-stone mile-stone-second">
+                    <img src="{% static 'img/Icons/flag.png' %}" alt="">
+                </div>
+
+                <!-- running for final destination -->
+                <div class="progress-bar-outerbox">
+                    <div class="progress-bar"></div>
+                    <div class="user-running">
+                        <!-- user running -->
+                        <img src="{% static 'img/Icons/user-running.png' %}" alt="">
+                    </div>
+
+                </div>
                 
             </div>
+            <div class="final-destination-box">
+                <img src="{% static 'img/Icons/success.png' %}" alt="">
+                <b>FINAL</b>     
+            </div>
+
+
+
         </div>
-        <div class="profile-horizontal">
-            <button>Analysis</button>
-            <button>Test</button>
-            <button>Notes</button>
-            <button>Questions</button>
+        <div class="progress-details">
+            <h2>Progress Details</h2>
+            <h4>Course Status : 40 %</h4>
+            <h4>Level First : In Progress</h4>
+            <h4>Level Second : - </h4>
         </div>
-    </div>
-    
-    <div class="profile-bottum">
-        <div class="my-course-section">
-            <h3>My Course</h3>
-            <div class="my-course-card">
-                <div class="card-course-img"><h2>.C</h2></div>
-                <div class="card-details">
-                    <h4>Lean C</h4>
-                    <button>Continue to course</button>
+        <div class="profile-bottum">
+            <div class="my-course-section">
+                <h3>My Course</h3>
+                <div class="my-course-card">
+                    <div class="card-course-img"><img src="{% static 'img/Icons/letter-c.png' %}" alt=""></div>
+                    <div class="card-details">
+                        <h4>Lean C</h4>
+                        <button>Continue to course</button>
+                    </div>
                 </div>
+                <div class="user-profile-explore-more">
+                    <button class="explore-more-btn">Explore more ></button>
+                </div>
+            </div>
+
+            <div class="test-analysis-section">
+                <ul>
+                    <h3>Test</h3>
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/target.png' %}" alt="">
+                                <h4>Average Accuracy</h4>
+                            </div>
+                            <p>52.26%</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/percentage.png' %}" alt="">
+                                <h4>Average Percentile</h4>
+                            </div>
+                            <p>49.06%</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/bar-graph.png' %}" alt="">
+                                <h4>Average Rank</h4>
+                            </div>
+                            <p>5226</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/clock.png' %}" alt="">
+                                <h4>Average Time Per Question</h4>
+                            </div>
+                            <p>3m 41s</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/test.png' %}" alt="">
+                                <h4>Test Attempted</h4>
+                            </div>
+                            <p>30</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/exam.png' %}" alt="">
+                                <h4>Total Attempted Questions</h4>
+                            </div>
+                            <p>196</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/decision.png' %}" alt="">
+                                <h4>Correct : Incorrect Questions</h4>
+                            </div>
+                            <p>113:83</p>
+                        </div>
+                    </li>
+
+                    <li class="test-analysis-section-li">
+                        <div class="test-analysis-div">
+                            <div class="test-analysis-div-left">
+                                <img src="{% static 'img/Icons/deadline.png' %}" alt="">
+                                <h4>Total Test Time</h4>
+                            </div>
+                            <p>12h 4m 8s</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
 
 
 
-<!-- <script src="{% static 'script/courses/take-course.js' %}"></script> -->
+    <!-- <script src="{% static 'script/courses/take-course.js' %}"></script> -->
 
-{% endblock %}
+    {% endblock %}
 
-{% block scriptcontain %}
-    
-    
-{% endblock %}
+    {% block scriptcontain %}
+
+
+    {% endblock %}

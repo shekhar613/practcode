@@ -36,6 +36,15 @@
             "question":"what is computer's language",
             "options":["Python","C","Java","Machine/Binary language"],
             "ans":"Machine/Binary language"
+        },
+        "Question-1":{
+            "question":"write program to sum the two numbers",
+            "explain":"your program will two user inputs :- a and b and prints the sum of this two numbers",
+            "public":["2\n2","5\n5","10\n10"],
+            "private":["20\n20","50\n50","100\n100"],
+            "answer":{"public":{"2\n2":"4","5\n5":"10","10\n10":"20" },
+                "private":{"20\n20":"40","50\n50":"100","100\n100":"200"}
+            }
         }
     },
     "2 Data types":{

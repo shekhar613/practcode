@@ -1,3 +1,4 @@
+
 var toggleFlag = true;
 const toggle_takeCourse_bar = () => {
  
@@ -41,6 +42,45 @@ const checkScreenSize = () => {
     toggleFlag = true;
   }
 };
+// load progress_after reload or refresh the page
+const _reloadTheProgress = () =>{
+  if(window.localStorage.getItem('activeTopics')){
+    var data = JSON.parse( window.localStorage.getItem('activeTopics'))
+    getcourseData(data["topicName"],data["headingKey"]);
+  }
+
+}
+
+const getcourseData=(topicName,headingKey)=>{
+  $.ajax({
+    type: "POST",
+    url: "/get-course-cotent/",
+    data: { key: topicName,heading:headingKey },
+    success: function (data) {
+      console.log(data)
+      //    after submission
+      // clear screen
+      document.getElementById("course-text-ID").innerHTML=""
+      document.getElementById("sub-topicID").innerText="👉 "+topicName
+      // for phone view
+      if (innerWidth<=950){
+        toggle_takeCourse_bar();
+      }
+      if(data.includes("quize")){
+        console.log("quize in content")
+        addQuiz(data,topicName)
+      }else{
+        if(data.includes("question")){
+          addQuestionSection(data,topicName);
+        }else{
+          jsonToHtml(data);
+        }
+        
+      }
+      
+    },
+  });
+}
 
 // user topic selection
 course_topics_ulID;
@@ -52,29 +92,11 @@ listItems.forEach(function (item) {
     // Retrieve the value of the clicked list item
     var topicName = item.getAttribute("value");
     var headingKey = item.className;
-    $.ajax({
-      type: "POST",
-      url: "/get-course-cotent/",
-      data: { key: topicName,heading:headingKey },
-      success: function (data) {
-        console.log(data)
-        //    after submission
-        // clear screen
-        document.getElementById("course-text-ID").innerHTML=""
-        document.getElementById("sub-topicID").innerText="👉 "+topicName
-        // for phone view
-        if (innerWidth<=950){
-          toggle_takeCourse_bar();
-        }
-        if(data.includes("quize")){
-          console.log("quize in content")
-          addQuiz(data,topicName)
-        }else{
-          jsonToHtml(data);
-        }
-        
-      },
-    });
+    var topics_save = JSON.stringify({"headingKey":headingKey,"topicName":topicName})
+   
+    window.localStorage.setItem('activeTopics',topics_save)
+    getcourseData(topicName,headingKey)
+    
   });
 });
 
@@ -122,7 +144,105 @@ const addQuiz = (data,key) =>{
   `
 
 }
+const addQuestionSection=(data,key)=>{
+  
+  contentSection.innerHTML=`<div class="pacrtice-code-question-div">
+  <div class="code-question">
+      <h6>${data[1][key]['question']}</h6>
+      <p class="question-explaination">${data[1][key]['explain']}</p>
+  </div>
+  <div class="editor-area">
+      <div class="user-code">
+          <h5>Editor</h5>
+          <div style="padding: 10px;">
+              <div id="editor"></div>
+          </div>    
+          
+         
+      </div>
+      <div class="user-code-btnsection">
+          <button class="coderunner-btn"  id="coderunner-btnID" onclick ="testcase()">Test code</button>
+          <button class="submit-btn" >Submit</button>
+          <div class="test-caese-btns">
+              <button id="TestcaseID-1"><i class="fa-regular fa-circle-play"></i> Test case 1 </button>
+              <button id="TestcaseID-2"><i class="fa-regular fa-circle-play"></i> Test case 2 </button>
+              <button id="TestcaseID-3"><i class="fa-regular fa-circle-play"></i> Test case 3 </button>
+          </div>
+      </div>
+      <div id="editor-box-id">
+       
+      </div>
+  </div>
+</div>
+  `
+  //  <div class="editor-error-box">Syntax Error</div>
+  var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/c_cpp");
+    editor.setShowPrintMargin(false);
+    editor.container.style.width = "100%";
+    editor.container.style.height="400px";
 
+
+    editor.setOptions({
+      behavioursEnabled: true
+    });
+    //pastingandcopyremovehere
+    document.getElementById("editor").addEventListener("keydown", function(event) {
+      // Check if Ctrl key is pressed (event.ctrlKey for Windows/Linux, event.metaKey for Mac)
+      if ((event.ctrlKey || event.metaKey) && (event.key === "c" || event.key === "C" || event.key === "v" || event.key === "V")) {
+          // Prevent default behavior (disable copy and paste)
+          event.preventDefault();
+      }
+    });
+    
+}
+
+const testcase=()=>{
+  var data = JSON.parse( window.localStorage.getItem('activeTopics'))
+  $.ajax({
+    type: "POST",
+    url: "/questiontestcase/",
+    data: { key: data['topicName'],heading:data['headingKey'],code:ace.edit("editor").getValue() },
+    success: function (data) {
+     
+      testcase_status=data['status']
+      delete testcase_status.error;
+     
+      document.getElementById('editor-box-id').innerHTML=''
+      if(data['status']=='Syntax Error !'){
+        var error=document.createElement('div')
+        error.className="editor-error-box"
+        error.innerText=`Syntax Error 1`
+        document.getElementById('editor-box-id').appendChild(error)
+      
+      }else{
+        let i = 1;
+        for(let key in testcase_status){
+
+          
+              if(data['status'][key]){
+                var sucess=document.createElement('div')
+                sucess.className="editor-sucess-box"
+                sucess.innerText=`Test case ${i} Passed !`
+                document.getElementById('editor-box-id').appendChild(sucess)
+
+                document.getElementById('TestcaseID-'+i).style.color="green"
+              }else{
+                var error=document.createElement('div')
+                error.className="editor-error-box"
+                error.innerText=`Test case ${i} Failed !`
+                document.getElementById('editor-box-id').appendChild(error)
+                document.getElementById('TestcaseID-'+i).style.color="red"
+              
+              }
+            
+            i++;        
+          }
+        }
+      // clear screen
+    }})
+}
 const wait = (cb, time) => new Promise( (res, rej)=> setTimeout( function () { cb(); res(); }, time ) );
 
 const type = async (ele, text, i, cb) => {
@@ -194,3 +314,5 @@ async function jsonToHtml(json) {
 
 const contentSection = document.getElementById("course-text-ID");
 
+// testcase
+_reloadTheProgress();

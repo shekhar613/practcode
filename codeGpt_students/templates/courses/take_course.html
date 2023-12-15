@@ -3,6 +3,9 @@
 {% load static %}
     
     <link rel="stylesheet" href="{% static 'css/coursecardui/take_course.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    
+  
 {% endblock %}   
 {% block Mainroot %}
 <button class="course-main-div-toggle" onclick="toggle_takeCourse_bar()"><i class="fa-solid fa-angles-left" id="course-status-bar-toggle-iconID"></i> </button><br>
@@ -21,7 +24,9 @@
                         {% if "Quiz" in item %}
 
                             <li value="{{ item }}" class="{{ key }}"><i class="fa-solid fa-ranking-star" style="color: gold;font-size: 20px;padding-right: 8px;"></i> {{ item }}</li>
-                        
+                        {% elif "Question" in item %}
+                            <li value="{{ item }}" class="{{ key }}"> {{ item }} <i class="fa-solid fa-spell-check" style="color: gold;font-size: 20px;padding-left: 8px;"></i></li>
+
                         {% else %}
                             <li value="{{ item }}" class="{{ key }}"> {{ item }}</li>
                         {% endif %}   
@@ -63,6 +68,7 @@
                 <div id="course-text-ID">
 
                     
+                    
 
                 </div>
 
@@ -71,7 +77,11 @@
     </div>
     
 <script src="{% static 'script/courses/take-course.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
 
+  <script>
+   
+</script>
 {% endblock %}
 
 {% block scriptcontain %}
