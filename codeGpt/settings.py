@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-h7km-y1mn6pzk#$1ziaj$s^j$h%=e*he+rax$-5ajg#1c1*zqe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.practcode.com','practcode.com','*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
