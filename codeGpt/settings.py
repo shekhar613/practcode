@@ -134,22 +134,22 @@ SIMPLE_JWT = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'practcode_db',
-        'USER': 'chandu',
-        'PASSWORD': 'Pinklips@786',
-        'HOST': 'localhost',  # The IP address of your MySQL server
-        'PORT': '3306',  # The default MySQL port
-    }
-}
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": "mydatabase",
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'practcode_db',
+#         'USER': 'chandu',
+#         'PASSWORD': 'Pinklips@786',
+#         'HOST': 'localhost',  # The IP address of your MySQL server
+#         'PORT': '3306',  # The default MySQL port
 #     }
 # }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
